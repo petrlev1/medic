@@ -1,0 +1,8 @@
+{
+  "name": " medic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "77571622"
+}
