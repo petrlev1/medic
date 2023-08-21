@@ -3,6 +3,38 @@
 
 /** Ionic CSS Variables **/
 :root {
+
+  /** UserStyles **/
+  ion-menu {
+    --ion-background-color:#29a3ad;
+  }
+
+  ion-icon {
+    // color: #ffffff;
+  }
+
+ .cont1 { padding: 20pt; }
+
+ ion-toolbar {
+  --background: #ffffff;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+ion-tab-bar {
+  --background: #29a3ad;
+}
+
+  ion-title {
+    background-color:#29a3ad; text-align: left;
+  }
+
+  .title1 { font-size: 25px; }
+  .title2 { font-size: 20px; }
+
+
+
+
   /** primary **/
   --ion-color-primary: #29a3ad;
   --ion-color-primary-rgb: 41, 163, 173;

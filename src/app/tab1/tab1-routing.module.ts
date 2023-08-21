@@ -6,7 +6,15 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },  {
+    path: 'date-time',
+    loadChildren: () => import('./date-time/date-time.module').then( m => m.DateTimePageModule)
+  },
+  {
+    path: 'podtverdit-zapis',
+    loadChildren: () => import('./podtverdit-zapis/podtverdit-zapis.module').then( m => m.PodtverditZapisPageModule)
   }
+
 ];
 
 @NgModule({
