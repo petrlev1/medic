@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab4Page
+  },
+  {
+    path: 'dobavit-preparat',
+    loadChildren: () => import('./dobavit-preparat/dobavit-preparat.module').then( m => m.DobavitPreparatPageModule)
   }
 ];
 

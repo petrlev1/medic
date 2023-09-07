@@ -1,6 +1,60 @@
 <!-- Menu -->
 <ion-menu side="end" contentId="main-content">
-  <ion-content class="ion-padding">This is the menu content 11.</ion-content>
+  <ion-content class="ion-padding" color="primary">
+    
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab2']">
+      <ion-label>
+        <p>Мои записи</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab1/date-time']">
+      <ion-label>
+        <p>Онлайн запись на прием к врачу </p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab4']">
+      <ion-label>
+        <p>Расписание приема лекарственных 
+          средств</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab2/dostavka-preparatovi']">
+      <ion-label>
+        <p>Доставка препаратов</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/lichnie-dannie']">
+      <ion-label>
+        <p>Личные данные</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/zakazat-test']">
+      <ion-label>
+        <p>Заказать тест</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/voprosi']">
+      <ion-label>
+        <p>Задать вопрос</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/chat']">
+      <ion-label>
+        <p>Чат</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/nastroyki']">
+      <ion-label>
+        <p>Настройки</p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" color="primary" [routerLink]="['']">
+      <ion-label>
+        <p>Выход</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-content>
 </ion-menu>
 
 

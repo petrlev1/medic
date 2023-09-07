@@ -1,14 +1,116 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
+
   <ion-toolbar>
-    <ion-title>tab5</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    
   </ion-toolbar>
+
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tab5</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  tab5
+
+<div class="cont1">
+
+<div class="title1">Личный кабинет</div>
+
+<div class="PageNastroyki">
+<ion-grid>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" >
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" >
+        <div class="custom-button-content">
+          <ion-icon name="medkit-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Онлайн запись</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" >
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" >
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" >
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['issledovaniya']">
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Исследования</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" >
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" >
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['nastroyki']">
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Настройки</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</div>
+
+
+
+
+
+</div>
+
 </ion-content>

@@ -1,0 +1,38 @@
+<ion-header [translucent]="true" class="ion-no-border">
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Назад" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+<div class="cont1">
+
+<div class="title1" style="margin-bottom: 25pt;">Задать вопрос</div>
+
+<ion-textarea fill="outline"
+    placeholder="Type something here"
+    [autoGrow]="true"
+    placeholder="Ваш вопрос"
+    style="height: 200pt; margin: 20pt 0 0 0;"
+  >
+  </ion-textarea>
+
+  <ion-button expand="block" color="secondary" size="large" style="margin-top: 30pt;">Отправить</ion-button>
+
+
+</div>
+
+</ion-content>

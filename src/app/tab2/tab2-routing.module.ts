@@ -6,7 +6,15 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },  {
+    path: 'zapisi-detail',
+    loadChildren: () => import('./zapisi-detail/zapisi-detail.module').then( m => m.ZapisiDetailPageModule)
+  },
+  {
+    path: 'dostavka-preparatovi',
+    loadChildren: () => import('./dostavka-preparatovi/dostavka-preparatovi.module').then( m => m.DostavkaPreparatoviPageModule)
   }
+
 ];
 
 @NgModule({

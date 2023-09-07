@@ -1,0 +1,71 @@
+<ion-header [translucent]="true" class="ion-no-border">
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Назад" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+<div class="cont1">
+
+
+<div class="title1" style="margin-bottom: 25pt;">Личные данные</div>
+
+<div class="table_dannie">
+
+  <ion-item detail="false">
+    <ion-label>
+      <h3>Ваш ЭПИД. НОМЕР:</h3>
+      <p>14.03.2023;	</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item detail="false">
+    <ion-label>
+      <h3>Телефон регистратуры:</h3>
+      <p>8 3452 276689</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item detail="false">
+    <ion-label>
+      <h3>Адрес центра:</h3>
+      <p>г. Тюмень, ул. Курортная, 28</p>
+    </ion-label>
+  </ion-item>
+
+  </div>
+
+  <ion-button expand="block" color="secondary" size="large" [routerLink]="['dobavit-preparat']" style="margin: 40pt 0;">Подробнее</ion-button>
+
+<div class="title2" style="margin: 25px 0 10px 0;">Имя / Ник</div>
+<ion-input value="Цветочек" fill="outline"></ion-input>
+
+<div class="title2" style="margin: 25px 0 10px 0;">Город</div>
+<ion-select interface="action-sheet" placeholder="Москва" fill="solid">
+  <ion-select-option value="apples">Москва</ion-select-option>
+</ion-select>
+
+<div class="title2" style="margin: 25px 0 10px 0;">Мед. учреждение</div>
+<ion-select interface="action-sheet" placeholder="Учреждение № 1" fill="solid">
+  <ion-select-option value="apples">Учреждение № 1</ion-select-option>
+</ion-select>
+
+<ion-button expand="block" color="secondary" size="large" [routerLink]="['dobavit-preparat']" style="margin-top: 30pt;">Сохранить</ion-button>
+
+
+</div>
+
+</ion-content>

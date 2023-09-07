@@ -1,0 +1,75 @@
+<ion-header [translucent]="true" class="ion-no-border">
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button text="Назад" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+<div class="cont1">
+
+<div class="title1" style="margin-bottom: 25pt;">Чат-бот</div>
+
+<div class="chat1">
+
+<div class="chat1_robo">
+Привет, я бот и я помогу ответить на ваши вопросы. Что вас интересует?
+<span>20.08.2023</span>
+</div>
+<div class="chat1_me">
+  Нужен тест на вич
+  <span>20.08.2023</span>
+</div>
+<div class="chat1_robo">
+  Привет, я бот и я помогу ответить на ваши вопросы. Что вас интересует?
+  <span>20.08.2023</span>
+  </div>
+  <div class="chat1_me">
+    Нужен тест на вич
+    <span>20.08.2023</span>
+  </div>
+  <div class="chat1_robo">
+    Привет, я бот и я помогу ответить на ваши вопросы. Что вас интересует?
+    <span>20.08.2023</span>
+    </div>
+    <div class="chat1_me">
+      Нужен тест на вич
+      <span>20.08.2023</span>
+    </div>
+
+</div>
+
+<div class="chat1_containerField">
+<div class="chat1_sentField">
+
+<ion-textarea fill="outline"
+    placeholder="Type something here"
+    [autoGrow]="true"
+    placeholder="Написать вопрос"
+    style="position: absolute; top: 0; left: 0; width: 80%; height: 50pt; --border-color: #ffffff;"
+  >
+  </ion-textarea>
+
+  <ion-button color="light">
+    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
+  </div>
+  </div>
+
+
+</div>
+
+</ion-content>

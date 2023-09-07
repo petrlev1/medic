@@ -6,8 +6,63 @@
 
   /** UserStyles **/
   ion-menu {
-    --ion-background-color:#29a3ad;
+    // --ion-background-color:#29a3ad;
   }
+
+  ion-menu-button {
+	  width: 45pt;   
+	  --font-size: 100px !important;
+    font-size: 70px;
+  }
+  
+  .list1 ion-item::part(native) {
+  margin: 5pt 0;
+  border-radius: 20px;
+}
+.list1 h3 {
+  font-size: 13pt;
+}
+.list1 ion-item p {
+ font-size: 11pt; margin-top: 5pt; opacity: 0.7;
+}
+
+
+.list2 ion-row { margin: 5pt 0;}
+
+.table_issled { font-size: 10pt; color: #777777; }
+.table_issled h3 { color: #000000;}
+
+.table_issled_detail { font-size: 13pt; color: #777777; border-bottom: 1px solid #BEBEBE; }
+.table_issled_detail ion-row { margin: 5pt 0;}
+
+.table_dannie { }
+.table_dannie h3 { font-size: 14pt; color: #2A2A2A;}
+.table_dannie p { font-size: 12pt;}
+
+.chat1 { margin-bottom: 100pt;}
+.chat1 div { margin-top: 10pt; margin-bottom: 10pt; padding: 15pt; border-radius: 8pt; }
+.chat1 span { display: block; color: #777777; font-size: 8pt; text-align: right; margin-top: 3pt; }
+.chat1_me { background-color: #29A3AD4D; margin-left: 30pt; }
+.chat1_robo { background-color: #F9F9F9; margin-right: 30pt; }
+
+.chat1_containerField {
+  position: fixed; height: 70pt; right: 0; left: 0; bottom: 0; background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
+}
+.chat1_sentField { position: relative; margin-top: 1pt; margin-left: 20pt; margin-right: 20pt;
+  height: 52pt; background-color: #fff; border: 1px solid #BEBEBE; border-radius: 5pt;}
+.chat1_sentField ion-button { position: absolute; top: 8pt; right: 5pt;}
+
+.faq1 {
+  position: relative;
+  font-size: 12pt;
+  background: #F9F9F9; padding: 15pt 25pt 15pt 15pt;
+  margin-bottom: 15pt;
+ }
+ .faq1tit { color: #2A2A2A; margin-bottom: 10pt; font-weight: bold; }
+ .faq1Cont { color: #777777; }
+ .faq1Arrow { position: absolute; top: 15pt; right: 10pt; opacity: 0.5; }
+
+.list1Disable { opacity: 0.5; }
 
   ion-icon {
     // color: #ffffff;
@@ -15,28 +70,40 @@
 
  .cont1 { padding: 20pt; }
 
+ /**
  ion-toolbar {
   --background: #ffffff;
   --padding-top: 10px;
   --padding-bottom: 10px;
 }
+**/
 
 ion-tab-bar {
-  --background: #29a3ad;
+  // --background: #29a3ad;
 }
 
   ion-title {
-    background-color:#29a3ad; text-align: left;
+   //  background-color:#29a3ad; text-align: left;
   }
 
   .title1 { font-size: 25px; }
   .title2 { font-size: 20px; }
 
+  .PageNastroyki {
+    ion-button { margin-top: 10pt; margin-bottom: 10pt; width: 110pt; height: 70pt; }
+  }
+
+  .custom-button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 
 
 
   /** primary **/
-  --ion-color-primary: #29a3ad;
+  --ion-color-primary: #107881;
   --ion-color-primary-rgb: 41, 163, 173;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -44,7 +111,7 @@ ion-tab-bar {
   --ion-color-primary-tint: #3eacb5;
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary: #29A3AD;
   --ion-color-secondary-rgb: 61, 194, 255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
@@ -100,7 +167,7 @@ ion-tab-bar {
   --ion-color-medium-tint: #9d9fa6;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
+  --ion-color-light: #F9F9F9;
   --ion-color-light-rgb: 244, 245, 248;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;

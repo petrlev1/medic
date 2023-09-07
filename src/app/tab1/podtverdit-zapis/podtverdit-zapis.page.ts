@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PodtverditZapisPage implements OnInit {
 
+  public alertButtons = ['Хорошо'];
+
   constructor() { }
 
   ngOnInit() {
