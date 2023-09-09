@@ -22,7 +22,7 @@
 <ion-grid>
   <ion-row>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" >
+      <ion-button color="light" size="small" [routerLink]="['../tab2']">
         <div class="custom-button-content">
           <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
           <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
@@ -30,7 +30,7 @@
       </ion-button>
     </ion-col>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" >
+      <ion-button color="light" size="small" [routerLink]="['../tab1/date-time']">
         <div class="custom-button-content">
           <ion-icon name="medkit-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
           <ion-label style="margin: 8pt 0;">Онлайн запись</ion-label>
@@ -40,35 +40,35 @@
   </ion-row>
   <ion-row>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" >
+      <ion-button color="light" size="small" [routerLink]="['../tab4']">
         <div class="custom-button-content">
-          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
-          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+          <ion-icon name="calendar-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Расписание приема</ion-label>
         </div>
       </ion-button>
     </ion-col>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" >
+      <ion-button color="light" size="small" [routerLink]="['../tab2/dostavka-preparatovi']">
         <div class="custom-button-content">
-          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
-          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+          <ion-icon name="airplane-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Доставка</ion-label>
         </div>
       </ion-button>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" >
+      <ion-button color="light" size="small" [routerLink]="['../tab5/lichnie-dannie']">
         <div class="custom-button-content">
-          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
-          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+          <ion-icon name="person-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Личные данные</ion-label>
         </div>
       </ion-button>
     </ion-col>
     <ion-col style="text-align: center;">
       <ion-button color="light" size="small" [routerLink]="['issledovaniya']">
         <div class="custom-button-content">
-          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-icon name="search-circle-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
           <ion-label style="margin: 8pt 0;">Исследования</ion-label>
         </div>
       </ion-button>
@@ -76,32 +76,38 @@
   </ion-row>
   <ion-row>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" >
+      <ion-button color="light" size="small" [routerLink]="['../tab5/zakazat-test']">
         <div class="custom-button-content">
-          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
-          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+          <ion-icon name="call-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Заказать тест</ion-label>
         </div>
       </ion-button>
     </ion-col>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" >
+      <ion-button color="light" size="small" [routerLink]="['../tab5/voprosi']">
         <div class="custom-button-content">
-          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
-          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+          <ion-icon name="help-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Задать вопрос</ion-label>
         </div>
       </ion-button>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" [routerLink]="['nastroyki']">
+      <ion-button color="light" size="small" [routerLink]="['../tab5/chat']">
         <div class="custom-button-content">
-          <ion-icon name="create-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
-          <ion-label style="margin: 8pt 0;">Настройки</ion-label>
+          <ion-icon name="chatbox-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Чат</ion-label>
         </div>
       </ion-button>
     </ion-col>
     <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['nastroyki']">
+        <div class="custom-button-content">
+          <ion-icon name="settings-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Настройки</ion-label>
+        </div>
+      </ion-button>
     </ion-col>
   </ion-row>
 </ion-grid>
