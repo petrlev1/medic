@@ -1,0 +1,69 @@
+<ion-content [fullscreen]="true">
+
+  <div class="cont1">
+
+    <div style="text-align: center; font-weight: bold; margin-top: 20pt;">Введите пин-код</div>
+
+    <div class="pin_dots">
+    <ion-icon name="ellipse" color="primary"></ion-icon>
+    <ion-icon name="ellipse" color="primary"></ion-icon>
+    <ion-icon name="ellipse" color="medium"></ion-icon>
+    <ion-icon name="ellipse" color="medium"></ion-icon>
+    </div>
+
+    <div class="pin_block">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">1</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">2</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">3</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">4</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">5</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">6</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">7</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">8</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">9</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="clear" shape="round" style="font-size: 8pt; height: 45pt">Сброс</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="outline" shape="round" style="width: 45pt; height: 45pt;">0</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button [routerLink]="['../tabs/tab1']" fill="clear" shape="round" style="height: 45pt;">
+              <ion-icon slot="icon-only" name="finger-print-outline" size="large"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+  </div>
+
+</ion-content>

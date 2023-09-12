@@ -1,0 +1,53 @@
+<ion-header [translucent]="true" class="ion-no-border">
+
+  <ion-toolbar>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="cont1">
+
+  <ion-modal trigger="open-login" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <div class="block">
+
+        <div class="title1" style="margin-bottom: 25pt;">Вход по отпечатку пальца</div>
+        
+        <ion-label color="medium">Пожалуйста, следуйте инструкциям</ion-label>
+    <div style="text-align: center; margin-top: 10pt;">
+      <ion-button color="light" color="primary" shape="round" style="width: 80pt; height: 80pt;">
+        <ion-icon slot="icon-only" name="finger-print-outline" style="width: 45pt; height: 45pt;"></ion-icon>
+      </ion-button>
+      </div>
+      <div style="text-align: center; margin-top: 10pt;">
+      <ion-label color="medium">Прикоснитесь к сканеру отпечатков пальцев.</ion-label>
+      </div>
+
+      </div>
+    </ng-template>
+  </ion-modal>
+
+    <div class="title1" style="margin-bottom: 25pt;">Вход</div>
+
+    <ion-input label="Логин" label-placement="floating" fill="outline" placeholder="Логин"></ion-input>
+
+    <ion-input label="Пароль" label-placement="floating" fill="outline" placeholder="Пароль" style="margin-top: 15pt;"></ion-input>
+
+    <ion-button [routerLink]="['../pin-code']" expand="block" color="secondary" size="large" style="margin-top: 50pt;">Войти</ion-button>
+
+    <ion-button [routerLink]="['../tabs/tab5/zakazat-test']" expand="block" color="secondary" size="small" style="margin-top: 30pt;" fill="clear">Продолжить без авторизации</ion-button>
+
+    <div style="text-align: center; margin-top: 10pt;">
+    <ion-button id="open-login" color="secondary" fill="clear" style="width: 80pt; height: 80pt;">
+      <ion-icon slot="icon-only" name="finger-print-outline" style="width: 45pt; height: 45pt;"></ion-icon>
+    </ion-button>
+    </div>
+
+  </div>
+
+</ion-content>
+  

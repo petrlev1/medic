@@ -27,6 +27,17 @@
 }
 
 
+.pin_dots { text-align: center; margin: 30pt 0;}
+.pin_dots ion-icon { margin: 0 3pt;}
+
+.pin_block { position: absolute; bottom: 30pt; left: 0; right: 0; margin: auto; width: 250pt; }
+.pin_block ion-button { font-size: 14pt; font-weight: bold; color: #777777;
+  --border-color: #E9E9E9;
+  --border-width: 2px;
+}
+.pin_block ion-col { text-align: center;}
+
+
 .list2 ion-row { margin: 5pt 0;}
 
 .table_issled { font-size: 10pt; color: #777777; }
