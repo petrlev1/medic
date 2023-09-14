@@ -1,15 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>HomePage</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-
 <ion-content [fullscreen]="true">
-  test
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">HomePage</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+
+  <div class="cont1">
+
+    <div style="align-items: center; margin-top: 50pt;">
+    <ion-img src="/assets/logo.jpg" style="width: 100pt; margin: auto;"></ion-img>
+    </div>
+
+    <div style="align-items: center; margin-top: 50pt;">
+      <ion-img src="/assets/logo_text.jpg" style="width: 200pt; margin: auto;"></ion-img>
+      </div>
+
+      <div style="align-items: center; margin-top: 25pt;">
+      <ion-label color="medium" style="text-align: center; display: block;">Ваше здоровье под контролем!</ion-label>
+      </div>
+
+    <ion-button [routerLink]="['../login']" expand="block" color="secondary" size="medium" style="margin-top: 50pt;">Авторизация</ion-button>
+
+    <ion-button [routerLink]="['../login']" expand="block" color="secondary" size="medium" fill="outline" style="margin-top: 20pt;">Вход без авторизации</ion-button>
+
+  </div>
+
+  </ion-content>

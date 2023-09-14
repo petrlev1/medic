@@ -16,6 +16,32 @@
 
 <div class="cont1">
 
+  <ion-modal #modal trigger="open-modal-zakazat_test">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar color="clear">
+         
+            <ion-button size="large" fill="clear" shape="round" color="light" slot="end" (click)="modal.dismiss()">
+              <ion-icon slot="icon-only" name="close-outline" size="large" color="dark"></ion-icon>
+            </ion-button>
+          
+        </ion-toolbar>
+        
+        <div class="title1" style="text-align: center; margin: 0 0 15pt 0;">Заказать тест</div>
+  <div style="text-align: center; font-size: 15pt;">
+  Для заказа теста, пожалуйста, свяжитесь с администратором по контактному номеру:
+  </div>
+  <div class="title1" style="text-align: center; margin: 15pt 0 0 0;">+7(3452) 999 999</div>
+  <div style="text-align: center; margin: 15pt 0 0 0;">
+  <ion-button size="large">Позвонить</ion-button>
+  </div>
+        
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+
 <div class="title1">Личный кабинет</div>
 
 <div class="PageNastroyki">
@@ -76,7 +102,7 @@
   </ion-row>
   <ion-row>
     <ion-col style="text-align: center;">
-      <ion-button color="light" size="small" [routerLink]="['../tab5/zakazat-test']">
+      <ion-button color="light" size="small" id="open-modal-zakazat_test">
         <div class="custom-button-content">
           <ion-icon name="call-outline" size="large" color="secondary" style="margin-top: 5pt;"></ion-icon>
           <ion-label style="margin: 8pt 0;">Заказать тест</ion-label>

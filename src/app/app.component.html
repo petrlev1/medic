@@ -1,58 +1,124 @@
+<!-- Modals -->
+<ion-modal #modal trigger="open-modal-zakazat_test2">
+  <ng-template>
+    <ion-content>
+      <ion-toolbar color="clear">
+       
+          <ion-button size="large" fill="clear" shape="round" color="light" slot="end" (click)="modal.dismiss()">
+            <ion-icon slot="icon-only" name="close-outline" size="large" color="dark"></ion-icon>
+          </ion-button>
+        
+      </ion-toolbar>
+      
+      <div class="title1" style="text-align: center; margin: 0 0 15pt 0;">Заказать тест</div>
+<div style="text-align: center; font-size: 15pt;">
+Для заказа теста, пожалуйста, свяжитесь с администратором по контактному номеру:
+</div>
+<div class="title1" style="text-align: center; margin: 15pt 0 0 0;">+7(3452) 999 999</div>
+<div style="text-align: center; margin: 15pt 0 0 0;">
+<ion-button size="large">Позвонить</ion-button>
+</div>
+      
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+
+
+
+
 <!-- Menu -->
-<ion-menu side="end" contentId="main-content">
+<ion-menu side="end" contentId="main-content" style="--width: 100%;">
   <ion-content class="ion-padding" color="primary">
+
+    <div style="text-align: right;">
+    <ion-menu-toggle>
+      <ion-button fill="clear" shape="round" color="light" style="height: 45pt; text-align: right;">
+        <ion-icon slot="icon-only" name="close-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-menu-toggle>
+    </div>
     
+    <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab2']">
       <ion-label>
         <p>Мои записи</p>
       </ion-label>
     </ion-item>
-    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab1/date-time']">
+  </ion-menu-toggle>
+
+  <ion-menu-toggle>
+    <ion-item button detail="false" color="primary" [routerLink]="['/tabs/tab1']">
       <ion-label>
         <p>Онлайн запись на прием к врачу </p>
       </ion-label>
     </ion-item>
+  </ion-menu-toggle>
+
+  <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab4']">
       <ion-label>
         <p>Расписание приема лекарственных 
           средств</p>
       </ion-label>
     </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab2/dostavka-preparatovi']">
       <ion-label>
         <p>Доставка препаратов</p>
       </ion-label>
     </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/lichnie-dannie']">
       <ion-label>
         <p>Личные данные</p>
       </ion-label>
     </ion-item>
-    <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/zakazat-test']">
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+    <ion-item button detail="false" color="primary" id="open-modal-zakazat_test2">
       <ion-label>
         <p>Заказать тест</p>
       </ion-label>
     </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/voprosi']">
       <ion-label>
         <p>Задать вопрос</p>
       </ion-label>
     </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/chat']">
       <ion-label>
         <p>Чат</p>
       </ion-label>
     </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab5/nastroyki']">
       <ion-label>
         <p>Настройки</p>
       </ion-label>
     </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['']">
       <ion-label>
         <p>Выход</p>
       </ion-label>
     </ion-item>
+    </ion-menu-toggle>
 
   </ion-content>
 </ion-menu>
