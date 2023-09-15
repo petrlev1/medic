@@ -50,6 +50,11 @@
 .table_dannie h3 { font-size: 14pt; color: #2A2A2A;}
 .table_dannie p { font-size: 12pt;}
 
+.podtverdit_zapis_list {}
+.podtverdit_zapis_list p { font-size: 14pt; color: #BEBEBE; margin: 7pt 0 0 0; }
+.podtverdit_zapis_list h3 { font-size: 16pt; margin: 10pt 0 5pt 0; }
+.podtverdit_zapis_list ion-item { border-bottom: 1px solid #BEBEBE;}
+
 .chat1 { margin-bottom: 100pt;}
 .chat1 div { margin-top: 10pt; margin-bottom: 10pt; padding: 15pt; border-radius: 8pt; }
 .chat1 span { display: block; color: #777777; font-size: 8pt; text-align: right; margin-top: 3pt; }
@@ -71,7 +76,7 @@
  }
  .faq1tit { color: #2A2A2A; margin-bottom: 10pt; font-weight: bold; }
  .faq1Cont { color: #777777; }
- .faq1Arrow { position: absolute; top: 15pt; right: 10pt; opacity: 0.5; }
+ .faq1Arrow { position: absolute; font-weight: 100; font-size: 18pt; top: 5pt; right: 10pt; color: #C3C3C5; opacity: 0.8; }
 
 .list1Disable { opacity: 0.5; }
 
@@ -80,6 +85,19 @@
   }
 
  .cont1 { padding: 20pt; }
+
+ .alert-head { border-bottom: 1px solid #BEBEBE;}
+ .alert-button-group { text-align: center; }
+ .alert-button-group button { 
+  position: relative; 
+  display: block;
+  right: 0;
+  margin: auto;
+}
+
+.modal_zakaz_test_cont { text-align: center; font-size: 13pt; padding: 0 15%; }
+
+
 
  /**
  ion-toolbar {
@@ -108,6 +126,23 @@ ion-tab-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+
+  ion-modal {
+    --height: 50%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: rgb(14 116 144);
+    --color: white;
   }
 
 

@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ZapisiDetailPage
+  },  {
+    path: 'modalwin',
+    loadChildren: () => import('./modalwin/modalwin.module').then( m => m.ModalwinPageModule)
   }
+
 ];
 
 @NgModule({

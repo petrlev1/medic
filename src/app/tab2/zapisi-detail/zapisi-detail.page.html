@@ -46,8 +46,7 @@
 
 <ion-button expand="block" color="secondary" size="large" style="margin-top: 30pt;">Добавить в календарь</ion-button>
 
-<ion-button id="otmenit-zapis" expand="block" color="danger" size="large" style="margin-top: 15pt;">Отменить запись</ion-button>
-<ion-alert trigger="otmenit-zapis" class="custom-alert" header="Вы действительно хотите отменить запись?" [buttons]="alertButtons"></ion-alert>
+<ion-button expand="block" color="danger" size="large" [routerLink]="['modalwin']" style="margin-top: 15pt;">Отменить запись</ion-button>
 
 </div>
 
