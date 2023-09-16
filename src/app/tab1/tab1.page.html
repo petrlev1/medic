@@ -16,46 +16,132 @@
 
 <div class="cont1">
 
-<div class="title1">Здравствуйте Цветочек!</div>
+  <ion-modal #modal trigger="open-modal-zakazat_test">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar color="clear">
+         
+            <ion-button size="large" fill="clear" shape="round" color="light" slot="end" (click)="modal.dismiss()">
+              <ion-icon slot="icon-only" name="close-outline" size="large" color="dark"></ion-icon>
+            </ion-button>
+          
+        </ion-toolbar>
+        
+        <div class="title1" style="text-align: center; margin: 0 0 15pt 0;">Заказать тест</div>
+  <div class="modal_zakaz_test_cont">
+  Для заказа теста, пожалуйста, свяжитесь с администратором по контактному номеру:
+  </div>
+  <div class="title1" style="text-align: center; margin: 15pt 0 0 0;">+7(3452) 999 999</div>
+  <div style="text-align: center; margin: 15pt 0 0 0;">
+  <ion-button size="large">Позвонить</ion-button>
+  </div>
+        
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 
-<div class="title2" style="margin: 25px 0;">Выберите специалиста для записи:</div>
 
-<div class="list1">
-<ion-item button detail="false" [routerLink]="['date-time']" color="light">
-  <ion-label>
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </ion-label>
-</ion-item>
 
-<ion-item button detail="false" [routerLink]="['date-time']" color="light">
-  <ion-label>
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </ion-label>
-</ion-item>
+<div class="title1">Личный кабинет</div>
 
-<ion-item button detail="false" [routerLink]="['date-time']" color="light">
-  <ion-label>
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </ion-label>
-</ion-item>
-
-<ion-item button detail="false" [routerLink]="['date-time']" color="light">
-  <ion-label>
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </ion-label>
-</ion-item>
-
-<ion-item button detail="false" [routerLink]="['date-time']" color="light">
-  <ion-label>
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </ion-label>
-</ion-item>
+<div class="PageNastroyki">
+<ion-grid>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab2']">
+        <div class="custom-button-content">
+          <ion-icon name="create-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Мои записи</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab1/date-time']">
+        <div class="custom-button-content">
+          <ion-icon name="medkit-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Онлайн запись</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab4']">
+        <div class="custom-button-content">
+          <ion-icon name="calendar-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Расписание приема</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab2/dostavka-preparatovi']">
+        <div class="custom-button-content">
+          <div style="width: 35px; height: 35px;"><ion-img src="/assets/ic_dostavka.svg" style="margin-top: 9px;"></ion-img></div>
+          <ion-label style="margin: 8pt 0;">Доставка</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab5/lichnie-dannie']">
+        <div class="custom-button-content">
+          <ion-icon name="person-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Личные данные</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab5/issledovaniya']">
+        <div class="custom-button-content">
+          <ion-icon name="search-circle-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Исследования</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" id="open-modal-zakazat_test">
+        <div class="custom-button-content">
+          <ion-icon name="call-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Заказать тест</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab5/voprosi']">
+        <div class="custom-button-content">
+          <ion-icon name="help-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Задать вопрос</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab5/chat']">
+        <div class="custom-button-content">
+          <ion-icon name="chatbox-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Чат</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+    <ion-col style="text-align: center;">
+      <ion-button color="light" size="small" [routerLink]="['../tab5/nastroyki']">
+        <div class="custom-button-content">
+          <ion-icon name="settings-outline" size="large" color="primary" style="margin-top: 5pt;"></ion-icon>
+          <ion-label style="margin: 8pt 0;">Настройки</ion-label>
+        </div>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </div>
+
+
+
+
 
 </div>
 

@@ -26,6 +26,8 @@
  font-size: 11pt; margin-top: 5pt; opacity: 0.7;
 }
 
+ion-button { font-size: 12pt; }
+ion-button span { padding: 10pt; }
 
 .pin_dots { text-align: center; margin: 30pt 0;}
 .pin_dots ion-icon { margin: 0 3pt;}
@@ -144,6 +146,8 @@ ion-tab-bar {
     --background: rgb(14 116 144);
     --color: white;
   }
+
+  .datetime-time ion-picker-internal { }
 
 
 
