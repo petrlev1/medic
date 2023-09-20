@@ -162,14 +162,8 @@
       <ion-row>
         <ion-col><div style="margin: 0 0 7pt 0; color: #777777;">Начать с:</div>
         <div>
-          <ion-label>
-            <ion-datetime-button datetime="datetime"></ion-datetime-button>
-     <ion-modal [keepContentsMounted]="true">
-       <ng-template>
-         <ion-datetime id="datetime"></ion-datetime>
-       </ng-template>
-     </ion-modal> 
-           </ion-label>
+          <ion-datetime locale="ru-RU" presentation="date">
+          </ion-datetime>
         </div>
         </ion-col>
       </ion-row>
