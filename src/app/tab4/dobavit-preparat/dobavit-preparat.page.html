@@ -23,67 +23,77 @@
 
 <div class="title1" style="margin-bottom: 15pt;">Добавить препарат</div>
 
+<ion-grid>
+
+  <ion-row>
+    <ion-col>
 <div class="title2" style="margin: 25px 0 15px 0;">Медикамент</div>
 
 <ion-input label="Название" label-placement="floating" fill="outline" placeholder="Название"></ion-input>
+</ion-col>
+</ion-row>
 
-<ion-grid style="margin-top: 5pt;">
   <ion-row>
     <ion-col size="8">
       
-        <ion-select interface="action-sheet" placeholder="Таблетки" fill="solid" style="--background: #29A3AD33!important;">
-          <ion-select-option value="apples">Абакавир (раствор)</ion-select-option>
-          <ion-select-option value="apples">Абакавир (таблетки)</ion-select-option>
-          <ion-select-option value="apples">Абакавир + Ламивудин</ion-select-option>
-          <ion-select-option value="apples">Атазанавир</ion-select-option>
-          <ion-select-option value="apples">Азитромицин</ion-select-option>
-          <ion-select-option value="apples">Ацикловир</ion-select-option>
-          <ion-select-option value="apples">Ламивудин (раствор)</ion-select-option>
-          <ion-select-option value="apples">Ламивудин (таблетки)</ion-select-option>
-          <ion-select-option value="apples">Зидовудин</ion-select-option>
-          <ion-select-option value="apples">Зидовудин + Ламивудин</ion-select-option>
-          <ion-select-option value="apples">Фосфазид</ion-select-option>
-          <ion-select-option value="apples">Тенофовир</ion-select-option>
-          <ion-select-option value="apples">Эфавиренз</ion-select-option>
-          <ion-select-option value="apples">Невирапин (суспензия)</ion-select-option>
-          <ion-select-option value="apples">Невирапин (таблетки)</ion-select-option>
-          <ion-select-option value="apples">Элсульфавирин</ion-select-option>
-          <ion-select-option value="apples">Этравирин</ion-select-option>
-          <ion-select-option value="apples">Тенофовир дизопроксил + Эмтрицитабин + Рилпивирин</ion-select-option>
-          <ion-select-option value="apples">Тенофовир дизопроксил + Ламивудин + Доравирин</ion-select-option>
-          <ion-select-option value="apples">Тенофовир дизопроксил + Ламивудин + Элсульфавирин</ion-select-option>
-          <ion-select-option value="apples">Лопинавир + Ритонавир (раствор)</ion-select-option>
-          <ion-select-option value="apples">Лопинавир + Ритонавир (таблетки)</ion-select-option>
-          <ion-select-option value="apples">Ритонавир</ion-select-option>
-          <ion-select-option value="apples">Дарунавир</ion-select-option>
-          <ion-select-option value="apples">Фосампренавир</ion-select-option>
-          <ion-select-option value="apples">Ралтегравир (жевательные таблетки)</ion-select-option>
-          <ion-select-option value="apples">Ралтегравир (таблетки)</ion-select-option>
-          <ion-select-option value="apples">Долутегравир</ion-select-option>
-          <ion-select-option value="apples">Тенофовир алафенамид + Эмтрицитабин + Биктегравир</ion-select-option>
-          <ion-select-option value="apples">Тенофовир алафенамид + Эмтрицитабин + Элвитегравир + Кобицистат</ion-select-option>
-          <ion-select-option value="apples">Изониазид</ion-select-option>
-          <ion-select-option value="apples">Ко-тримоксазол</ion-select-option>
-          <ion-select-option value="apples">Флуконазол</ion-select-option>
+        <ion-select interface="action-sheet" label="Таблетки" label-placement="floating" fill="outline" cancelText="Закрыть">
+          <ion-select-option>Абакавир (раствор)</ion-select-option>
+          <ion-select-option>Абакавир (таблетки)</ion-select-option>
+          <ion-select-option>Абакавир + Ламивудин</ion-select-option>
+          <ion-select-option>Атазанавир</ion-select-option>
+          <ion-select-option>Азитромицин</ion-select-option>
+          <ion-select-option>Ацикловир</ion-select-option>
+          <ion-select-option>Ламивудин (раствор)</ion-select-option>
+          <ion-select-option>Ламивудин (таблетки)</ion-select-option>
+          <ion-select-option>Зидовудин</ion-select-option>
+          <ion-select-option>Зидовудин + Ламивудин</ion-select-option>
+          <ion-select-option>Фосфазид</ion-select-option>
+          <ion-select-option>Тенофовир</ion-select-option>
+          <ion-select-option>Эфавиренз</ion-select-option>
+          <ion-select-option>Невирапин (суспензия)</ion-select-option>
+          <ion-select-option>Невирапин (таблетки)</ion-select-option>
+          <ion-select-option>Элсульфавирин</ion-select-option>
+          <ion-select-option>Этравирин</ion-select-option>
+          <ion-select-option>Тенофовир дизопроксил + Эмтрицитабин + Рилпивирин</ion-select-option>
+          <ion-select-option>Тенофовир дизопроксил + Ламивудин + Доравирин</ion-select-option>
+          <ion-select-option>Тенофовир дизопроксил + Ламивудин + Элсульфавирин</ion-select-option>
+          <ion-select-option>Лопинавир + Ритонавир (раствор)</ion-select-option>
+          <ion-select-option>Лопинавир + Ритонавир (таблетки)</ion-select-option>
+          <ion-select-option>Ритонавир</ion-select-option>
+          <ion-select-option>Дарунавир</ion-select-option>
+          <ion-select-option>Фосампренавир</ion-select-option>
+          <ion-select-option>Ралтегравир (жевательные таблетки)</ion-select-option>
+          <ion-select-option>Ралтегравир (таблетки)</ion-select-option>
+          <ion-select-option>Долутегравир</ion-select-option>
+          <ion-select-option>Тенофовир алафенамид + Эмтрицитабин + Биктегравир</ion-select-option>
+          <ion-select-option>Тенофовир алафенамид + Эмтрицитабин + Элвитегравир + Кобицистат</ion-select-option>
+          <ion-select-option>Изониазид</ion-select-option>
+          <ion-select-option>Ко-тримоксазол</ion-select-option>
+          <ion-select-option>Флуконазол</ion-select-option>
         </ion-select>
       
     </ion-col>
     <ion-col>
      
-        <ion-select interface="action-sheet" placeholder="МГ" fill="solid" style="--background: #29A3AD33!important;">
-          <ion-select-option value="apples">МГ</ion-select-option>
-          <ion-select-option value="apples">МЛ</ion-select-option>
+      <ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="mg">
+          <ion-select-option value="mg">МГ</ion-select-option>
+          <ion-select-option>МЛ</ion-select-option>
         </ion-select>
      
     </ion-col>
   </ion-row>
-</ion-grid>
 
+<ion-row>
+<ion-col>
 <div class="title2" style="margin: 25px 0;">Напоминания и дозировка</div>
 
-  <ion-select interface="action-sheet" placeholder="Курс" fill="solid" style="--background: #29A3AD33!important;">
-    <ion-select-option value="apples">Курс</ion-select-option>
+<ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="kurs">
+    <ion-select-option value="kurs">Курс</ion-select-option>
   </ion-select>
+</ion-col>
+</ion-row>
+
+</ion-grid>
 
   <div style="margin-top: 10pt; margin-bottom: 5pt;">
   <ion-grid>
@@ -110,8 +120,8 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-select interface="action-sheet" placeholder="9:00" fill="solid" style="--background: #29A3AD33!important;">
-          <ion-select-option value="apples">9:00</ion-select-option>
+        <ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="time">
+          <ion-select-option value="time">9:00</ion-select-option>
         </ion-select>
       </ion-col>
       <ion-col>
@@ -127,41 +137,50 @@
     </ion-row>
   </ion-grid>
 
-  <ion-select interface="action-sheet" placeholder="Стандартные напоминания" fill="solid" style="--background: #29A3AD33!important; margin-top: 10pt;">
-    <ion-select-option value="apples">Стандартные напоминания</ion-select-option>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+  <ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="napominan">
+    <ion-select-option value="napominan">Стандартные напоминания</ion-select-option>
   </ion-select>
 
   <div class="title2" style="margin-top: 25pt; margin-bottom: 15pt;">Режим приема</div>
 
-  <ion-select interface="action-sheet" placeholder="Каждый день" fill="solid" style="--background: #29A3AD33!important;">
-    <ion-select-option value="apples">Каждый день</ion-select-option>
+  <ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="rejim">
+    <ion-select-option value="rejim">Каждый день</ion-select-option>
   </ion-select>
 
   <div class="title2" style="margin-top: 25pt; margin-bottom: 15pt;">Длительность</div>
 
-  <ion-select interface="action-sheet" placeholder="Постоянно" fill="solid" style="--background: #29A3AD33!important;">
-    <ion-select-option value="apples">Постоянно</ion-select-option>
+  <ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="dlitelnost">
+    <ion-select-option value="dlitelnost">Постоянно</ion-select-option>
   </ion-select>
 
-  <div class="list2" style="border: 1px solid #BEBEBE; border-radius: 3pt; margin-top: 10pt; background-color: #29A3AD33;">
+  <div class="list2" style="border: 1px solid #BEBEBE; border-radius: 3pt; margin-top: 10pt;">
     <ion-grid>
       <ion-row>
-        <ion-col size="3"><div style="margin: 5pt 0 0 0; color: #777777;">Начать с:</div></ion-col>
-        <ion-col>
+        <ion-col><div style="margin: 0 0 7pt 0; color: #777777;">Начать с:</div>
+        <div>
           <ion-label>
-         <ion-datetime-button datetime="datetime"></ion-datetime-button>
-  <ion-modal [keepContentsMounted]="true">
-    <ng-template>
-      <ion-datetime id="datetime"></ion-datetime>
-    </ng-template>
-  </ion-modal> 
-        </ion-label>
-      </ion-col>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+     <ion-modal [keepContentsMounted]="true">
+       <ng-template>
+         <ion-datetime id="datetime"></ion-datetime>
+       </ng-template>
+     </ion-modal> 
+           </ion-label>
+        </div>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>
 
   <ion-button expand="block" color="secondary" size="large" style="margin-top: 15pt;"><span>Добавить</span></ion-button>
+
+  </ion-col>
+  </ion-row>
+  </ion-grid>
 
 </div>
 

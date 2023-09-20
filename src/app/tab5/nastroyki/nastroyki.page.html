@@ -26,13 +26,14 @@
 <ion-input value="Цветочек" fill="outline"></ion-input>
 
 <div class="title2" style="margin: 25px 0 10px 0;">Город</div>
-<ion-select interface="action-sheet" placeholder="Москва" fill="solid">
-  <ion-select-option value="apples">Москва</ion-select-option>
+<ion-select value="moscow" interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть">
+  <ion-select-option value="moscow">Москва</ion-select-option>
+  <ion-select-option>Санкт-Петербург</ion-select-option>
 </ion-select>
 
 <div class="title2" style="margin: 25px 0 10px 0;">Мед. учреждение</div>
-<ion-select interface="action-sheet" placeholder="Учреждение № 1" fill="solid">
-  <ion-select-option value="apples">Учреждение № 1</ion-select-option>
+<ion-select interface="action-sheet" cancelText="Закрыть" label-placement="floating" fill="outline" value="uchrejden">
+  <ion-select-option value="uchrejden">Учреждение № 1</ion-select-option>
 </ion-select>
 
 <ion-button expand="block" color="secondary" size="large" [routerLink]="['dobavit-preparat']" style="margin-top: 50pt;"><span>Сохранить</span></ion-button>

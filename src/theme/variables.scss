@@ -22,12 +22,26 @@
 .list1 h3 {
   font-size: 13pt;
 }
+
 .list1 ion-item p {
  font-size: 11pt; margin-top: 5pt; opacity: 0.7;
 }
 
+.list2 ion-row { margin: 5pt 0;}
+
+.list3 div { background-color: #F9F9F9; margin: 10pt 0; padding: 3pt 12pt; border-radius: 15px; cursor: pointer; }
+.list3 div:hover { color: #fff; background-color: #29A3AD; }
+.list3 div:focus { color: #fff; background-color: #29A3AD; }
+.list3 h3 {
+  font-size: 18px;
+}
+.list3 p {
+  font-size: 16px; margin-top: 5pt; opacity: 0.7;
+ }
+
 ion-button { font-size: 12pt; }
 ion-button span { padding: 10pt; }
+
 
 .pin_dots { text-align: center; margin: 30pt 0;}
 .pin_dots ion-icon { margin: 0 3pt;}
@@ -38,9 +52,6 @@ ion-button span { padding: 10pt; }
   --border-width: 2px;
 }
 .pin_block ion-col { text-align: center;}
-
-
-.list2 ion-row { margin: 5pt 0;}
 
 .table_issled { font-size: 10pt; color: #777777; }
 .table_issled h3 { color: #000000;}
@@ -53,8 +64,8 @@ ion-button span { padding: 10pt; }
 .table_dannie p { font-size: 12pt;}
 
 .podtverdit_zapis_list {}
-.podtverdit_zapis_list p { font-size: 14pt; color: #BEBEBE; margin: 7pt 0 0 0; }
-.podtverdit_zapis_list h3 { font-size: 16pt; margin: 10pt 0 5pt 0; }
+.podtverdit_zapis_list p { font-size: 15px; color: #BEBEBE; margin: 7pt 0 0 0; }
+.podtverdit_zapis_list h3 { font-size: 18px; margin: 10pt 0 5pt 0; }
 .podtverdit_zapis_list ion-item { border-bottom: 1px solid #BEBEBE;}
 
 .chat1 { margin-bottom: 100pt;}
@@ -121,7 +132,7 @@ ion-tab-bar {
   .title2 { font-size: 20px; }
 
   .PageNastroyki {
-    ion-button { margin-top: 10pt; margin-bottom: 10pt; width: 110pt; height: 70pt; font-size: 8pt; }
+    ion-button { margin-top: 10pt; margin-bottom: 10pt; padding: 0 5pt; width: 100pt; height: 70pt; font-size: 8pt; }
   }
 
   .custom-button-content {

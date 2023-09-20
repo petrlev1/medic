@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DostavkaPreparatoviPage implements OnInit {
 
+  public sentButtons = ['Хорошо'];
+
   constructor() { }
 
   ngOnInit() {
