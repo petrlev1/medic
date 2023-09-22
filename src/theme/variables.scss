@@ -27,7 +27,9 @@
  font-size: 11pt; margin-top: 5pt; opacity: 0.7;
 }
 
-.list2 ion-row { margin: 5pt 0;}
+.list2 { font-size: 16px; }
+.list2 ion-row { margin: 5pt 0; }
+.list2 ion-label { font-size: 18px; }
 
 .list3 div { background-color: #F9F9F9; margin: 10pt 0; padding: 3pt 12pt; border-radius: 15px; cursor: pointer; }
 .list3 div:hover { color: #fff; background-color: #29A3AD; }
@@ -53,11 +55,13 @@ ion-button span { padding: 10pt; }
 }
 .pin_block ion-col { text-align: center;}
 
-.table_issled { font-size: 10pt; color: #777777; }
+.table_issled { font-size: 16px; color: #777777; }
 .table_issled h3 { color: #000000;}
+.table_issled span { font-size: 13px; }
 
 .table_issled_detail { font-size: 13pt; color: #777777; border-bottom: 1px solid #BEBEBE; }
 .table_issled_detail ion-row { margin: 5pt 0;}
+.table_issled_detail span { font-size: 16px; color: #2A2A2A; }
 
 .table_dannie { }
 .table_dannie h3 { font-size: 14pt; color: #2A2A2A;}

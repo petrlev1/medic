@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DobavitPreparatPage implements 
 OnInit {
+
+  public dobavitPreparat = ['Хорошо'];
   
 constructor () { }
 

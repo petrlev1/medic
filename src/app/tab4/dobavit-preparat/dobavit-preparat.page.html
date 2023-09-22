@@ -170,7 +170,12 @@
     </ion-grid>
   </div>
 
-  <ion-button expand="block" color="secondary" size="large" style="margin-top: 15pt;"><span>Добавить</span></ion-button>
+  <ion-button id="dobavit-preparat" expand="block" color="secondary" size="large" style="margin-top: 15pt;"><span>Добавить</span></ion-button>
+  <ion-alert
+  trigger="dobavit-preparat"
+  header="Препарат добавлен"
+  [buttons]="dobavitPreparat"
+></ion-alert>
 
   </ion-col>
   </ion-row>
