@@ -30,11 +30,23 @@
 <div class="list2" style="border: 1px solid #BEBEBE; border-radius: 3pt; margin-top: 10pt;">
   <ion-grid>
     <ion-row>
-      <ion-col><div style="margin: 0 0 7pt 0; color: #777777;">Дата:</div>
+      <ion-col><div style="color: #777777;">Дата:</div>
       <div>
-        <ion-datetime locale="ru-RU">
+        <ion-datetime presentation="date" locale="ru-RU">
           <span slot="time-label">Время:</span>
         </ion-datetime>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<div class="list2" style="border: 1px solid #BEBEBE; border-radius: 3pt; margin-top: 10pt;">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      <div style="margin: 0; color: #777777;">Время:</div>
+      <div>
+        <ion-datetime presentation="time" locale="ru-RU"></ion-datetime>
       </div>
       </ion-col>
     </ion-row>

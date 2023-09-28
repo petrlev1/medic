@@ -39,6 +39,11 @@ export class IssledovaniyaDetailPage implements OnInit {
   options: {
     plugins: {
       zoom: {
+        pan: {
+          enabled: true,
+          //mode: 'x',
+          //threshold: 10,
+        },
         zoom: {
           wheel: {
             enabled: true,
@@ -46,7 +51,8 @@ export class IssledovaniyaDetailPage implements OnInit {
           pinch: {
             enabled: true
           },
-          mode: 'xy',
+          mode: 'y',
+          //overScaleMode: 'x',
         }
       }
     }
