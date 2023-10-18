@@ -8,12 +8,15 @@ import { ZakazatTestPageRoutingModule } from './zakazat-test-routing.module';
 
 import { ZakazatTestPage } from './zakazat-test.page';
 
+import { MaskitoModule } from '@maskito/angular';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ZakazatTestPageRoutingModule
+    ZakazatTestPageRoutingModule,
+    MaskitoModule
   ],
   declarations: [ZakazatTestPage]
 })

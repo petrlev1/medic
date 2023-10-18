@@ -8,12 +8,17 @@ import { DostavkaPreparatoviPageRoutingModule } from './dostavka-preparatovi-rou
 
 import { DostavkaPreparatoviPage } from './dostavka-preparatovi.page';
 
+
+import { MaskitoModule } from '@maskito/angular';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DostavkaPreparatoviPageRoutingModule
+    DostavkaPreparatoviPageRoutingModule,
+    MaskitoModule
   ],
   declarations: [DostavkaPreparatoviPage]
 })
