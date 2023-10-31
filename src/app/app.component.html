@@ -3,13 +3,13 @@
   <ng-template>
     <ion-content>
       <ion-toolbar color="clear">
-       
+
           <ion-button size="large" fill="clear" shape="round" color="light" slot="end" (click)="modal.dismiss()">
             <ion-icon slot="icon-only" name="close-outline" size="large" color="dark"></ion-icon>
           </ion-button>
-        
+
       </ion-toolbar>
-      
+
       <div class="title1" style="text-align: center; margin: 0 0 15pt 0;">Заказать тест</div>
 <div class="modal_zakaz_test_cont">
 Для заказа теста, пожалуйста, свяжитесь с администратором по контактному номеру:
@@ -18,7 +18,7 @@
 <div style="text-align: center; margin: 15pt 0 0 0;">
 <ion-button size="large">Позвонить</ion-button>
 </div>
-      
+
     </ion-content>
   </ng-template>
 </ion-modal>
@@ -38,7 +38,7 @@
       </ion-button>
     </ion-menu-toggle>
     </div>
-    
+
     <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab2']">
       <ion-label>
@@ -58,7 +58,7 @@
   <ion-menu-toggle>
     <ion-item button detail="false" color="primary" [routerLink]="['tabs/tab4']">
       <ion-label>
-        <p>Расписание приема лекарственных 
+        <p>Расписание приема лекарственных
           средств</p>
       </ion-label>
     </ion-item>
@@ -113,7 +113,7 @@
     </ion-menu-toggle>
 
     <ion-menu-toggle>
-    <ion-item button detail="false" color="primary" [routerLink]="['']">
+    <ion-item button detail="false" color="primary" (click)="SignOut()">
       <ion-label>
         <p>Выход</p>
       </ion-label>
@@ -128,7 +128,7 @@
 <div class="ion-page" id="main-content">
 
   <ion-content class="ion-padding">
-    
+
 <!-- Tabs -->
 <ion-app>
   <ion-router-outlet></ion-router-outlet>

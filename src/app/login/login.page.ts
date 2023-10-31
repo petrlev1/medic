@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from "@angular/router"
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 import { getDatabase, ref, set } from "firebase/database";
@@ -17,7 +17,7 @@ loginForm: any = {
   password: '',
 }
 
-  constructor() {
+  constructor(private router: Router) {
 
   // tabs/tab5/zakazat-test
 
@@ -29,7 +29,10 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
 
-    console.log('Reged!!');
+    console.log('Reged!! / ' + uid);
+
+    this.router.navigate(['/tabs/tab1'])
+
     //this.html_form = 0;
     //this.ProfName = "Privet " + uid + " !";
   //  this.ProfName = "Добро пожаловать!";
