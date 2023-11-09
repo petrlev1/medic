@@ -1,0 +1,40 @@
+.radioDate ion-radio::part(container) {
+    width: 71px;
+    height: 34px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+  }
+  
+  .radioDate ion-radio::part(mark) {
+    display: none;
+    background: none;
+    transition: none;
+    transform: none;
+    border-radius: 0;
+  }
+
+  .radioDate ion-radio { margin: 0 -10px 8px 0; }
+  .radioDate ion-radio span { position: absolute; display: block; width: 71px; height: 34px; text-align: center; font-size: 15px; color: #2A2A2A; left: 16px; top: 0; padding-top: 8px;
+    z-index: 1; }
+
+  .radioDate { }
+  .label-text-wrapper { }
+
+  .radioDate ion-radio.radio-checked span { color: #fff; }
+  
+  .radioDate ion-radio.radio-checked::part(container) {
+    background-color: #107881;
+    border-color: transparent;
+  }
+  
+  .radioDate ion-radio.radio-checked::part(mark) {
+    width: 6px;
+    height: 10px;
+  
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: #fff;
+  
+    transform: rotate(45deg);
+    
+  }

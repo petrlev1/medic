@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" class="ion-no-border">
 
   <ion-toolbar>
-    
+
   </ion-toolbar>
 
 </ion-header>
@@ -16,7 +16,7 @@
       <div class="block">
 
         <div class="title1" style="margin-bottom: 25pt;">Вход по отпечатку пальца</div>
-        
+
         <ion-label color="medium">Пожалуйста, следуйте инструкциям</ion-label>
     <div style="text-align: center; margin-top: 10pt;">
       <ion-button color="light" color="primary" shape="round" style="width: 80pt; height: 80pt;">
@@ -33,11 +33,11 @@
 
     <div class="title1" style="margin-bottom: 25pt;">Вход</div>
 
-    <ion-input label="Логин" label-placement="floating" fill="outline" placeholder="Логин"></ion-input>
+    <ion-input label="Логин" label-placement="floating" fill="outline" placeholder="Логин" [(ngModel)]="loginForm.login"></ion-input>
 
-    <ion-input label="Пароль" label-placement="floating" fill="outline" placeholder="Пароль" style="margin-top: 15pt;"></ion-input>
+    <ion-input label="Пароль" label-placement="floating" fill="outline" placeholder="Пароль" style="margin-top: 15pt;" [(ngModel)]="loginForm.password"></ion-input>
 
-    <ion-button [routerLink]="['../pin-code']" expand="block" color="secondary" size="large" style="margin-top: 50pt;">Войти</ion-button>
+    <ion-button  expand="block" color="secondary" size="large" style="margin-top: 50pt;" (click)="SignIn()">Войти</ion-button>
 
     <ion-button [routerLink]="['../tabs/tab5/zakazat-test']" expand="block" color="secondary" size="small" style="margin-top: 30pt;" fill="clear">Продолжить без авторизации</ion-button>
 
@@ -50,4 +50,3 @@
   </div>
 
 </ion-content>
-  

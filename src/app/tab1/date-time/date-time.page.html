@@ -23,18 +23,17 @@
 <div class="title1" style="margin-bottom: 15pt;">Дата и время</div>
 
 <div style="text-align: center">
-<ion-datetime locale="ru-RU" presentation="date"></ion-datetime>
+<ion-datetime locale="ru-RU" presentation="date" dayValues="10,11,12,15,18,20,22,25,28,30" [value]="['2023-10-10']"></ion-datetime>
 </div>
 
 <h3>Свободное время</h3>
-<ion-button>10:00</ion-button>
-<ion-button fill="outline" color="medium">10:00</ion-button>
-<ion-button fill="outline" color="medium">10:00</ion-button>
-<ion-button fill="outline" color="medium">10:00</ion-button>
-<ion-button fill="outline" color="medium">10:00</ion-button>
-<ion-button fill="outline" color="medium">10:00</ion-button>
-<ion-button fill="outline" color="medium">10:00</ion-button>
-<ion-button fill="outline" color="medium">10:00</ion-button>
+<ion-radio-group value="custom-checked" class="radioDate">
+  <ion-radio value="custom-checked"><span>10:00</span></ion-radio>
+  <ion-radio><span>11:00</span></ion-radio>
+  <ion-radio><span>12:00</span></ion-radio>
+  <ion-radio><span>13:00</span></ion-radio>
+  <ion-radio><span>15:00</span></ion-radio>
+</ion-radio-group>
 
 <div style="text-align: center; margin-top: 30pt;">
 <ion-button expand="block" color="secondary" size="large" [routerLink]="['../podtverdit-zapis']"><span>Записаться на прием</span></ion-button>

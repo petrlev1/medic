@@ -18,7 +18,13 @@
 
 <div class="title1">Здравствуйте Цветочек!</div>
 
-<div class="title2" style="margin: 25px 0;">Выберите специалиста для записи:</div>
+<div class="title2" style="margin: 25px 0 10px 0;">Ваш город</div>
+
+<ion-select interface="action-sheet" label-placement="floating" fill="solid" cancelText="Закрыть" value="kurs">
+  <ion-select-option value="kurs">Тюмень</ion-select-option>
+</ion-select>
+
+<div class="title2" style="margin: 40px 0 30px 0;">Выберите специалиста для записи:</div>
 
 <div class="list3">
 
@@ -30,7 +36,7 @@
     <h3>Фомина Светлана Юрьевна</h3>
     <p>Расписание</p>
   </div>
-  <div [routerLink]="['../tab1/date-time']">
+  <div class="list1Disable">
     <h3>Фомина Светлана Юрьевна</h3>
     <p>Расписание</p>
   </div>
@@ -38,7 +44,7 @@
     <h3>Фомина Светлана Юрьевна</h3>
     <p>Расписание</p>
   </div>
-  <div [routerLink]="['../tab1/date-time']">
+  <div class="list1Disable">
     <h3>Фомина Светлана Юрьевна</h3>
     <p>Расписание</p>
   </div>

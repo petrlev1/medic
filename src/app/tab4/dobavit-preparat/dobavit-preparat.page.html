@@ -83,20 +83,16 @@
     </ion-col>
   </ion-row>
 
-<ion-row>
-<ion-col>
-<div class="title2" style="margin: 25px 0;">Напоминания и дозировка</div>
-
-<ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="kurs">
-    <ion-select-option value="kurs">Курс</ion-select-option>
-  </ion-select>
-</ion-col>
-</ion-row>
-
 </ion-grid>
 
   <div style="margin-top: 10pt; margin-bottom: 5pt;">
+
   <ion-grid>
+    <ion-row>
+      <ion-col>
+      <div class="title2" style="margin: 25px 0;">Напоминания и дозировка</div>
+      </ion-col>
+      </ion-row>
     <ion-row>
       <ion-col size="2">
         <ion-button (click)="minus()" size="small" fill="clear">
@@ -151,10 +147,15 @@
     <ion-select-option value="rejim">Каждый день</ion-select-option>
   </ion-select>
 
-  <div class="title2" style="margin-top: 25pt; margin-bottom: 15pt;">Длительность</div>
+  <div class="title2" style="margin-top: 25pt; margin-bottom: 15pt;">Запас препарата</div>
 
   <ion-select interface="action-sheet" label-placement="floating" fill="outline" cancelText="Закрыть" value="dlitelnost">
-    <ion-select-option value="dlitelnost">Постоянно</ion-select-option>
+    <ion-select-option value="dlitelnost">1 мес.</ion-select-option>
+    <ion-select-option>2 мес.</ion-select-option>
+    <ion-select-option>3 мес.</ion-select-option>
+    <ion-select-option>4 мес.</ion-select-option>
+    <ion-select-option>5 мес.</ion-select-option>
+    <ion-select-option>6 мес.</ion-select-option>
   </ion-select>
 
   <div class="list2" style="border: 1px solid #BEBEBE; border-radius: 3pt; margin-top: 10pt;">
