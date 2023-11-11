@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref,  query, orderByChild, equalTo, limitToLast, set, update, child, onValue  } from "firebase/database";
 
+import { LoadingController } from '@ionic/angular';
+
 @Component({
   selector: 'app-issledovaniya',
   templateUrl: './issledovaniya.page.html',
   styleUrls: ['./issledovaniya.page.scss'],
 })
 export class IssledovaniyaPage implements OnInit {
+
+
+public isHidden: boolean = true;
 
 
 test: number;
@@ -19,11 +24,14 @@ test: number;
  profs: Array<{type: string; date: string; result: string; diffdays: number;}> = [];
 
 
-  constructor() {
+  constructor(private loadingCtrl: LoadingController) {
 
   this.test = 0;
 
   }
+
+
+
 
    getDiffDays(sDate:any, eDate:any) {
     var startDate = new Date(sDate);
@@ -46,6 +54,8 @@ test: number;
   }
 
   ngOnInit() {
+
+
 
 let dict = new Map<string, string>();
 
@@ -195,8 +205,6 @@ if (!this.test) this.test = 0;
 
   }
 });
-
-
 
 
 }
