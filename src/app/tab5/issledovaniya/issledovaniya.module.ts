@@ -8,13 +8,17 @@ import { IssledovaniyaPageRoutingModule } from './issledovaniya-routing.module';
 
 import { IssledovaniyaPage } from './issledovaniya.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IssledovaniyaPageRoutingModule
+    IssledovaniyaPageRoutingModule,
+    	HttpClientModule
   ],
+   providers: [],
   declarations: [IssledovaniyaPage]
 })
 export class IssledovaniyaPageModule {}

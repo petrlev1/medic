@@ -17,6 +17,8 @@ import { HttpHeaders } from '@angular/common/http';
 export class LoginPage implements OnInit {
 
 
+isValid = false;
+
 loginForm: any = {
   login: '',
   password: '',
@@ -26,35 +28,6 @@ loginForm: any = {
 
 
 
-  // tabs/tab5/zakazat-test
-
-
-   const auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-
-    console.log('Reged!! / ' + uid);
-
-    this.router.navigate(['/tabs/tab1'])
-
-    //this.html_form = 0;
-    //this.ProfName = "Privet " + uid + " !";
-  //  this.ProfName = "Добро пожаловать!";
-
-
-
-  } else {
-    // User is signed out
-
-   console.log('not reged');
-//   this.html_form = 1;
-
-  }
-});
-
 
   }
 
@@ -63,60 +36,184 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-	  var username = 'tester';
-    var password = 'By3dy9di';
-
-    // Кодируем имя пользователя и пароль в Base64
-    //var encodedCredentials = btoa(username + ':' + password);
-
-	var encodedCredentials = username + ':' + password;
-
-    // Устанавливаем заголовок Authorization в запросе
-
-
-	const httpOptions = {
-		headers: new HttpHeaders({
-
-			 'Access-Control-Allow-Origin': 'https://rieltorov.net',
-             'Access-Control-Allow-Methods': 'GET',
-             'Access-Control-Allow-Headers': 'Content-Type'
-  
-  })
-};
-
-  	const config = {
-		headers: {
-
-		//  'Content-Type':  'application/json',
-        //  'Authorization': 'Basic ' + btoa(unescape(encodeURIComponent('Администратор:By3dy9di')
-         
-           
-  
-  }
-};
-
-    // Выполняем запрос с базовой авторизацией
-   // var test = this.http.get('http://80.71.215.50:8099/Test/hs/AppServices/GetTests/1680/79aa76918db96b0bb880625bcfbea32da4ba51ca', config);
-      
-//console.log(test);
-
-
-this.http.get('http://80.71.215.50:8099/Test/hs/AppServices/GetTests/1680/79aa76918db96b0bb880625bcfbea32da4ba51ca',config)
-	
-.subscribe(
-        data => { // json data
-            console.log('Success: ', data);
-        },
-        error => {
-            console.log('Error: ', error);
-        });
-
 
   }
 
   SignIn(){
 
 	  console.log(this.loginForm.login + "," + this.loginForm.password);
+
+	   var username = 'tester';
+	   var password = 'By3dy9di';
+
+    // Кодируем имя пользователя и пароль в Base64
+    //var encodedCredentials = btoa(username + ':' + password);
+
+    var encodedCredentials = username + ':' + password;
+
+    // Устанавливаем заголовок Authorization в запросе
+
+    const httpOptions = {
+    headers: new HttpHeaders({
+			 'Access-Control-Allow-Origin': 'https://rieltorov.net',
+       'Access-Control-Allow-Methods': 'GET',
+       'Access-Control-Allow-Headers': 'Content-Type'
+       })
+      };
+
+  	const config = {
+		headers: {
+
+		//  'Content-Type':  'application/json',
+        //  'Authorization': 'Basic ' + btoa(unescape(encodeURIComponent('Администратор:By3dy9di')
+        }
+      };
+
+    // Выполняем запрос с базовой авторизацией
+   // var test = this.http.get('http://80.71.215.50:8099/Test/hs/AppServices/GetTests/1680/79aa76918db96b0bb880625bcfbea32da4ba51ca', config);
+
+//console.log(test);
+
+this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
+//this.http.get('https://rieltorov.net/tmp/medicapi.php',config)
+
+.subscribe(
+        data => { // json data
+
+
+
+
+        var dataj = JSON.parse(JSON.stringify(data));
+
+           // console.log('Success: ', dataj["Data"]);
+
+           console.log('Success: ', Object.keys(dataj).length);
+
+
+           // если в 1с пользователь есть, то идем в фб
+
+           if (Object.keys(dataj).length>0)
+           {
+
+
+
+
+
+
+
+           const auth = getAuth();
+           signInWithEmailAndPassword(auth, this.loginForm.login + "@m.ru", this.loginForm.password).then((userCredential) => {
+
+           // Signed in
+
+           const user = userCredential.user;
+
+           if (user) {
+           // User is signed in, see docs for a list of available properties
+           // https://firebase.google.com/docs/reference/js/firebase.User
+           const uid = user.uid;
+
+           // this.getMyLocation();
+
+            console.log('Already reged!! / ' + uid);
+
+
+            window.location.href = '/tabs/tab5/issledovaniya';
+
+
+
+
+           }
+
+           console.log(user);
+           })
+           .catch((error) => {
+
+           const errorCode = error.code;
+           const errorMessage = error.message;
+          // this.isValid = true;
+
+           //alert(errorMessage);
+
+           console.log(errorMessage);
+
+           createUserWithEmailAndPassword(auth, this.loginForm.login + "@m.ru", this.loginForm.password).then((userCredential) => {
+           // Signed in
+
+           const user = userCredential.user;
+
+           const uid = user.uid;
+
+           console.log('Reged!! / ' + uid);
+
+           }).catch((error) => {
+           const errorCode = error.code;
+           const errorMessage = error.message;
+
+           alert(errorMessage);
+
+           });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           }
+
+           else{
+               this.isValid = true;
+           }
+
+
+
+
+
+
+
+        },
+        error => {
+        this.isValid = true;
+            console.log('Error: ', error);
+        });
+
+
+
+
+
+
 
 /*
    const auth = getAuth();
@@ -144,29 +241,22 @@ signInWithEmailAndPassword(auth, this.loginForm.login, this.loginForm.password)
 
 }
 
-
+/*
 
     loginf() {
 
 
 		  var tok = 'Администратор:By3dy9di';
               var hash = btoa(unescape(encodeURIComponent(tok)));
-             
 
-
-     
-
-        // IMPORTANT, you should move request logic to repositores, 
-        // controller should only do stuff like:
-        // authService.login(vm.username, vm.password).then(...)
 
         $.ajax
           ({
             type: "GET",
             url: "http://80.71.215.50:8099/Test/hs/AppServices/GetTests/1680/79aa76918db96b0bb880625bcfbea32da4ba51ca",
             dataType: 'application/json',
-            beforeSend: function (xhr){ 
-                xhr.setRequestHeader("Authorization" , "Basic Администратор:By3dy9di"); 
+            beforeSend: function (xhr){
+                xhr.setRequestHeader("Authorization" , "Basic Администратор:By3dy9di");
             },
             success: function(){
               //  window.location.assign ="welcome.jsp";
@@ -183,7 +273,7 @@ signInWithEmailAndPassword(auth, this.loginForm.login, this.loginForm.password)
 
      }
 
-
+*/
 
 
 

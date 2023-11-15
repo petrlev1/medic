@@ -37,6 +37,15 @@
 
     <ion-input label="Пароль" label-placement="floating" fill="outline" placeholder="Пароль" style="margin-top: 15pt;" [(ngModel)]="loginForm.password"></ion-input>
 
+
+    <div class="alert" *ngIf="isValid">
+
+  <div >
+    Вы ввели неправильное имя пользователя или пароль.
+  </div>
+
+</div>
+
     <ion-button  expand="block" color="secondary" size="large" style="margin-top: 50pt;" (click)="SignIn()">Войти</ion-button>
 
     <ion-button [routerLink]="['../tabs/tab5/zakazat-test']" expand="block" color="secondary" size="small" style="margin-top: 30pt;" fill="clear">Продолжить без авторизации</ion-button>
