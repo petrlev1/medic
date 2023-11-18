@@ -1,8 +1,8 @@
 import {Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router"
+import {ActivatedRoute, Router} from "@angular/router"
 import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set, update, child, onValue  } from "firebase/database";
 
 import * as $ from 'jquery';
 import { HttpClient } from '@angular/common/http';
@@ -24,7 +24,7 @@ loginForm: any = {
   password: '',
 }
 
-  constructor(private router: Router,private http: HttpClient) {
+  constructor(private route: ActivatedRoute, private router: Router,private http: HttpClient) {
 
 
 
@@ -41,7 +41,7 @@ loginForm: any = {
 
   SignIn(){
 
-	  console.log(this.loginForm.login + "," + this.loginForm.password);
+	//  console.log(this.loginForm.login + "," + this.loginForm.password);
 
 	   var username = 'tester';
 	   var password = 'By3dy9di';
@@ -74,32 +74,37 @@ loginForm: any = {
 
 //console.log(test);
 
-this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
+//this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
+// 79aa76918db96b0bb880625bcfbea32da4ba51ca
+// 1680
+
+
+
+
+
+
+      this.http.post('https://rieltorov.net/tmp/medicapi3.php', {clogin: this.loginForm.login, cpassw: this.loginForm.password})
+
+
 //this.http.get('https://rieltorov.net/tmp/medicapi.php',config)
 
 .subscribe(
         data => { // json data
 
 
-
+  console.log('Success: ', data);
 
         var dataj = JSON.parse(JSON.stringify(data));
 
-           // console.log('Success: ', dataj["Data"]);
+          // console.log('Success: ', dataj);
 
-           console.log('Success: ', Object.keys(dataj).length);
+           console.log('Count: ', Object.keys(dataj["Data"]).length);
 
 
            // если в 1с пользователь есть, то идем в фб
 
-           if (Object.keys(dataj).length>0)
+           if (Object.keys(dataj["Data"]).length>0)
            {
-
-
-
-
-
-
 
            const auth = getAuth();
            signInWithEmailAndPassword(auth, this.loginForm.login + "@m.ru", this.loginForm.password).then((userCredential) => {
@@ -109,8 +114,7 @@ this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
            const user = userCredential.user;
 
            if (user) {
-           // User is signed in, see docs for a list of available properties
-           // https://firebase.google.com/docs/reference/js/firebase.User
+          
            const uid = user.uid;
 
            // this.getMyLocation();
@@ -118,7 +122,27 @@ this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
             console.log('Already reged!! / ' + uid);
 
 
-            window.location.href = '/tabs/tab5/issledovaniya';
+              update(ref(getDatabase(), 'users/' + uid + "/auth"), {
+                login: this.loginForm.login,
+                passw: this.loginForm.password
+
+               }).then((response) =>  {
+    console.log("Document successfully updated!");
+
+	this.router.navigate(['/tabs/tab5/issledovaniya'],  { state: { example: 'bar' } });
+
+
+}).catch((error) => {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+});
+
+
+            //window.location.href = '/tabs/tab5/issledovaniya';
+
+		//	this.router.navigate(['/tabs/tab5/issledovaniya'],  { state: { example: 'bar' } });
+
+			//this.router.navigate(['receiverComponent'],{state:{data:this.userFlow}})
 
 
 
@@ -146,6 +170,25 @@ this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
 
            console.log('Reged!! / ' + uid);
 
+
+		     
+              update(ref(getDatabase(), 'users/' + uid + "/auth"), {
+                login: this.loginForm.login,
+                passw: this.loginForm.password
+
+               }).then((response) =>  {
+    console.log("Document successfully updated!");
+
+	this.router.navigate(['/tabs/tab5/issledovaniya'],  { state: { example: 'bar' } });
+
+
+}).catch((error) => {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+});
+
+
+
            }).catch((error) => {
            const errorCode = error.code;
            const errorMessage = error.message;
@@ -170,9 +213,6 @@ this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
 
 
            });
-
-
-
 
 
 
