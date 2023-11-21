@@ -4,6 +4,15 @@ import { ViewChild } from '@angular/core';
 import zoomPlugin from 'chartjs-plugin-zoom';
 Chart.register(zoomPlugin);
 
+import { ActivatedRoute } from '@angular/router';
+import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { getDatabase, ref,  query, orderByChild, equalTo, limitToLast, set, update, child, onValue  } from "firebase/database";
+
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+
+
+
 @Component({
   selector: 'app-issledovaniya-detail',
   templateUrl: './issledovaniya-detail.page.html',
@@ -13,24 +22,160 @@ export class IssledovaniyaDetailPage implements OnInit {
 
   public chart: any;
 
-  constructor() { }
+  coinPrice: any;
 
-  ngOnInit() {
 
-    this.createChart();
+
+profs: Array<{type: string; date: string; result: number; diffdays: number;}> = [];
+
+titlesList: Array<{type: string; date: string; result: string; diffdays: number;}> = [];
+
+typei: number;
+typein: string;
+
+
+
+
+
+
+  constructor(private route: ActivatedRoute,private http: HttpClient) {
+
+  this.typei = 0;
+  this.typein = "";
 
   }
 
-  createChart(){
-  
+  ngOnInit() {
+
+   // this.createChart();
+
+
+
+
+
+
+ this.route.queryParams.subscribe(
+      params => {
+        this.typei =  params['type'];
+
+
+      }
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+
+    const uid = user.uid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   	const starCountRef = ref(getDatabase(), '/users/' + uid + "/auth");
+
+	onValue(starCountRef, (snapshot) => {
+
+		const clogin = snapshot.val().login;
+		const cpassw = snapshot.val().passw;
+
+		console.log(clogin);
+
+
+
+  	const config = {
+		headers: {
+
+		//  'Content-Type':  'application/json',
+        //  'Authorization': 'Basic ' + btoa(unescape(encodeURIComponent('Администратор:By3dy9di')
+        }
+      };
+
+	//  this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
+
+
+	 this.http.post('https://rieltorov.net/tmp/medicapi3.php', {clogin: clogin, cpassw: cpassw})
+
+
+	  //this.http.get('https://rieltorov.net/tmp/medicapi.php',config)
+
+
+
+
+
+
+	  .subscribe(
+		  data => { // json data
+
+		  this.titlesList = Object.values(data);
+		  //console.log('cnt: ', Object.values(data)[1].length);
+		  // console.log('val: ', Object.keys(Object.values(data)[1]));
+
+
+		  this.typein = Object.keys(Object.values(data)[1])[this.typei];
+
+
+			  for(var d in Object.values(data)[1][Object.keys(Object.values(data)[1])[this.typei]]) {
+				//  console.log('key3: ',Object.values(Object.values(data)[1])[this.typei]);
+
+				  this.profs.push({
+					  type: Object.keys(Object.values(data)[1])[1],
+					  date: Object.values(data)[1][Object.keys(Object.values(data)[1])[this.typei]][d]["Дата"],
+					  result: Object.values(data)[1][Object.keys(Object.values(data)[1])[this.typei]][d]["Результат"].
+					  replace(",", ".").replace(String.fromCharCode(160), ""),
+					  diffdays: 0});
+
+
+					  }
+
+
+
     this.chart = new Chart("MyChart2", {
 
       type: 'line',
   data: {
-    labels: ['15.03', '16.03', '17.03', '18.03', '19.03', '20.03'],
+    labels:  this.profs.map(row => row.date),
     datasets: [{
-      label: 'СД4',
-      data: [400, 200, 300, 600, 200, 100],
+      label: this.typein,
+      data:   this.profs.map(row => row.result),
+      //data:   test.map(row => row.count),
       fill: false,
       borderColor: 'rgb(75, 192, 192)',
       tension: 0.1
@@ -57,10 +202,100 @@ export class IssledovaniyaDetailPage implements OnInit {
       }
     }
   }
-      
+
     });
 
+
+
+
+
+
+
+
+
+
+
+
+					  // dataArray.push(dataObject[o]);
+
+		   },
+		   error => {
+			   console.log('Error: ', error);
+			  });
+
+
+
+
+
+    }, {
+           onlyOnce: true // если данные должны быть получены в реалтайм
+          });
+
+
+
+
+
+
+
+
+
+
+  } else {
+    // User is signed out
+   console.log('not reged');
+
+
+
   }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+
 
 
 }

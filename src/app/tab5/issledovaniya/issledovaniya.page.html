@@ -28,7 +28,8 @@
 
 <div *ngFor="let prof of profs">
 
-  <ion-item button detail="false" color="light" [routerLink]="['../issledovaniya-detail']">
+  <ion-item button detail="false" color="light" [routerLink]="['../issledovaniya-detail']" [queryParams]=
+    "{type:prof.typei}">
     <div class="table_issled">
       <ion-grid [fixed]="true">
         <ion-row>

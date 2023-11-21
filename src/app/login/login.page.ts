@@ -5,6 +5,8 @@ import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, onA
 import { getDatabase, ref, set, update, child, onValue  } from "firebase/database";
 
 import * as $ from 'jquery';
+import * as sha1 from 'js-sha1';
+
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -33,6 +35,9 @@ loginForm: any = {
 
   ngOnInit() {
 	 // this.loginf();
+
+
+	console.log(sha1('By3dy9di'));
 
 
 
@@ -82,8 +87,7 @@ loginForm: any = {
 
 
 
-
-      this.http.post('https://rieltorov.net/tmp/medicapi3.php', {clogin: this.loginForm.login, cpassw: this.loginForm.password})
+      this.http.post('https://rieltorov.net/tmp/medicapi3.php', {clogin: this.loginForm.login, cpassw: sha1(this.loginForm.password)})
 
 
 //this.http.get('https://rieltorov.net/tmp/medicapi.php',config)
@@ -114,7 +118,7 @@ loginForm: any = {
            const user = userCredential.user;
 
            if (user) {
-          
+
            const uid = user.uid;
 
            // this.getMyLocation();
@@ -171,7 +175,7 @@ loginForm: any = {
            console.log('Reged!! / ' + uid);
 
 
-		     
+
               update(ref(getDatabase(), 'users/' + uid + "/auth"), {
                 login: this.loginForm.login,
                 passw: this.loginForm.password

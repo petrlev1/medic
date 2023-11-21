@@ -8,12 +8,16 @@ import { IssledovaniyaDetailPageRoutingModule } from './issledovaniya-detail-rou
 
 import { IssledovaniyaDetailPage } from './issledovaniya-detail.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IssledovaniyaDetailPageRoutingModule
+    IssledovaniyaDetailPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [IssledovaniyaDetailPage]
 })

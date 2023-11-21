@@ -20,11 +20,13 @@ test: number;
 
 
 
+
+
  //profs: Array<{sovp: number; imya: string; img: string; rot: string; distm: string;}> = [];
 
- profs: Array<{type: string; date: string; result: string; diffdays: number;}> = [];
+ profs: Array<{typei: number; type: string; date: string; result: string; diffdays: number;}> = [];
 
-titlesList: Array<{type: string; date: string; result: string; diffdays: number;}> = [];
+titlesList: Array<{typei: number; type: string; date: string; result: string; diffdays: number;}> = [];
 
 
 
@@ -35,6 +37,7 @@ const authd = location.getState();
 
 
   this.test = 0;
+
 
   }
 
@@ -91,12 +94,12 @@ onAuthStateChanged(auth, (user) => {
 
 
    	const starCountRef = ref(getDatabase(), '/users/' + uid + "/auth");
-	
+
 	onValue(starCountRef, (snapshot) => {
-		
+
 		const clogin = snapshot.val().login;
 		const cpassw = snapshot.val().passw;
-		
+
 		console.log(clogin);
 
 
@@ -108,42 +111,120 @@ onAuthStateChanged(auth, (user) => {
         //  'Authorization': 'Basic ' + btoa(unescape(encodeURIComponent('Администратор:By3dy9di')
         }
       };
-	  
+
 	//  this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
+
 
 	 this.http.post('https://rieltorov.net/tmp/medicapi3.php', {clogin: clogin, cpassw: cpassw})
 
 
 	  //this.http.get('https://rieltorov.net/tmp/medicapi.php',config)
-	  
+
+
+
+
+
+
 	  .subscribe(
 		  data => { // json data
-		  
+
 		  this.titlesList = Object.values(data);
 		  //console.log('cnt: ', Object.values(data)[1].length);
-		  // console.log('val: ', Object.keys(Object.values(data)[1]));
-		  
+		   //console.log('val: ', Object.keys(Object.values(data)[1]));
+
+		   var i = 0;
+
+
+
 		  for(var o in Object.keys(Object.values(data)[1])) {
-			  // console.log('key2: ',Object.keys(Object.values(data)[1]));
+			   console.log('key2: ',Object.keys(Object.values(data)[1])[i]);
+
+
+
+
+
+			    this.profs.push({
+			      typei: i,
+					  type: Object.keys(Object.values(data)[1])[i],
+					  date: "-",
+					  result: "-",
+					  diffdays: 0});
+
+			   /*
 			  for(var d in Object.values(data)[1][Object.keys(Object.values(data)[1])[o]]) {
-				  //console.log('key3: ',Object.keys(Object.values(data)[1])[o]);
-				  
+				  console.log('key3: ',Object.keys(Object.values(data)[1])[o]);
+
 				  this.profs.push({
 					  type: Object.keys(Object.values(data)[1])[o],
 					  date: Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Дата"],
 					  result: Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Результат"],
 					  diffdays: 0});
-					  
+
 					  //  console.log('key: ', Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Дата"]);
-					  
+
 					  }
-					  
+
+					  // dataArray.push(dataObject[o]);
+
+					  */
+
+					  i++;
+				}
+		   },
+		   error => {
+			   console.log('Error: ', error);
+			  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  /*
+	  .subscribe(
+		  data => { // json data
+
+		  this.titlesList = Object.values(data);
+		  //console.log('cnt: ', Object.values(data)[1].length);
+		  // console.log('val: ', Object.keys(Object.values(data)[1]));
+
+		  for(var o in Object.keys(Object.values(data)[1])) {
+			  // console.log('key2: ',Object.keys(Object.values(data)[1]));
+			  for(var d in Object.values(data)[1][Object.keys(Object.values(data)[1])[o]]) {
+				  //console.log('key3: ',Object.keys(Object.values(data)[1])[o]);
+
+				  this.profs.push({
+					  type: Object.keys(Object.values(data)[1])[o],
+					  date: Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Дата"],
+					  result: Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Результат"],
+					  diffdays: 0});
+
+					  //  console.log('key: ', Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Дата"]);
+
+					  }
+
 					  // dataArray.push(dataObject[o]);
 				}
 		   },
 		   error => {
 			   console.log('Error: ', error);
 			  });
+
+			  */
+
+
 
     }, {
            onlyOnce: true // если данные должны быть получены в реалтайм
