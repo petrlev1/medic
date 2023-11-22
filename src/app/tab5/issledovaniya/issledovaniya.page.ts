@@ -120,11 +120,11 @@ onAuthStateChanged(auth, (user) => {
 		  data => { // json data
 		  
 		  this.titlesList = Object.values(data);
-		  //console.log('cnt: ', Object.values(data)[1].length);
-		  // console.log('val: ', Object.keys(Object.values(data)[1]));
+		  console.log('cnt: ', Object.values(data)[1].length);
+		   console.log('val: ', Object.keys(Object.values(data)[1]));
 		  
 		  for(var o in Object.keys(Object.values(data)[1])) {
-			  // console.log('key2: ',Object.keys(Object.values(data)[1]));
+			   console.log('key2: ',Object.keys(Object.values(data)[1]));
 			  for(var d in Object.values(data)[1][Object.keys(Object.values(data)[1])[o]]) {
 				  //console.log('key3: ',Object.keys(Object.values(data)[1])[o]);
 				  
@@ -134,7 +134,7 @@ onAuthStateChanged(auth, (user) => {
 					  result: Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Результат"],
 					  diffdays: 0});
 					  
-					  //  console.log('key: ', Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Дата"]);
+					    console.log('key: ', Object.values(data)[1][Object.keys(Object.values(data)[1])[o]][d]["Дата"]);
 					  
 					  }
 					  
