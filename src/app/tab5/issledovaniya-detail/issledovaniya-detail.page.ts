@@ -11,7 +11,7 @@ import { getDatabase, ref,  query, orderByChild, equalTo, limitToLast, set, upda
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
-
+import * as sha1 from 'js-sha1';
 
 @Component({
   selector: 'app-issledovaniya-detail',
@@ -131,7 +131,7 @@ onAuthStateChanged(auth, (user) => {
 	//  this.http.get('https://rieltorov.net/tmp/medicapi2.php',config)
 
 
-	 this.http.post('https://rieltorov.net/tmp/medicapi3.php', {clogin: clogin, cpassw: cpassw})
+	 this.http.post('https://rieltorov.net/tmp/medicapi3.php', {clogin: clogin, cpassw: sha1(cpassw)})
 
 
 	  //this.http.get('https://rieltorov.net/tmp/medicapi.php',config)

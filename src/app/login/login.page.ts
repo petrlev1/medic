@@ -37,7 +37,7 @@ loginForm: any = {
 	 // this.loginf();
 
 
-	console.log(sha1('By3dy9di'));
+
 
 
 
@@ -50,6 +50,8 @@ loginForm: any = {
 
 	   var username = 'tester';
 	   var password = 'By3dy9di';
+
+	   	console.log(sha1(this.loginForm.password));
 
     // Кодируем имя пользователя и пароль в Base64
     //var encodedCredentials = btoa(username + ':' + password);
