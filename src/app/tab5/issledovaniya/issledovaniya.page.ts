@@ -63,6 +63,21 @@ const authd = location.getState();
     }
   }
 
+  GetLast(type: string, data: object)
+	  {
+	  
+		   const dat = 'Data' as string;
+		   const types = data[dat as keyof typeof data];
+		   const typer = type as string;
+
+			const res = types[typer as keyof typeof types];
+
+		//console.log('RES: ',Object.keys(res).length);
+
+
+	  return res[Object.keys(res).length-1];
+	  }
+
   ngOnInit() {
 
 
@@ -134,13 +149,33 @@ console.log(uid);
 		  //console.log('cnt: ', Object.values(data)[1].length);
 		   //console.log('val: ', Object.keys(Object.values(data)[1]));
 
+		   const DateTime = 'DateTime' as string;
+		   const dat = 'Data' as string;
+
+		   const types = data[dat as keyof typeof data];
+
+
+		    const pcr = 'ПЦР' as string;
+
+
+		  console.log('ARRAY: ',types[pcr as keyof typeof types][7]);
+
 		   var i = 0;
 
-
-
 		  for(var o in Object.keys(Object.values(data)[1])) {
-			   console.log('key2: ',Object.keys(Object.values(data)[1])[i]);
+			  // console.log('key2: ',Object.keys(Object.values(data)[1])[i]);
 
+			  const lastsarr = this.GetLast(Object.keys(Object.values(data)[1])[i],data);
+
+
+		   const datev = 'Дата' as string;
+		   const datelst = lastsarr[datev as keyof typeof lastsarr];
+
+		    const resv = 'Результат' as string;
+		   const reslst = lastsarr[resv as keyof typeof lastsarr];
+
+
+               console.log("last el: ", datelst);
 
 
 
@@ -148,8 +183,8 @@ console.log(uid);
 			    this.profs.push({
 			      typei: i,
 					  type: Object.keys(Object.values(data)[1])[i],
-					  date: "-",
-					  result: "-",
+					  date: datelst,
+					  result: reslst,
 					  diffdays: 0});
 
 			   /*
