@@ -8,13 +8,17 @@ import { DateTimePageRoutingModule } from './date-time-routing.module';
 
 import { DateTimePage } from './date-time.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DateTimePageRoutingModule
+    DateTimePageRoutingModule,
+    	HttpClientModule
   ],
+     providers: [],
   declarations: [DateTimePage]
 })
 export class DateTimePageModule {}

@@ -5,7 +5,7 @@
     <ion-buttons slot="end">
       <ion-menu-button color="primary"></ion-menu-button>
     </ion-buttons>
-    
+
   </ion-toolbar>
 
 </ion-header>
@@ -28,7 +28,17 @@
 
 <div class="list3">
 
-  <div [routerLink]="['../tab1/date-time']">
+  <div *ngFor="let doc of doctors" [routerLink]="['../tab1/date-time']" [queryParams]=
+    "{doctor:doc}">
+    <h3>{{doc}}</h3>
+    <p>Расписание</p>
+  </div>
+ <!--
+ <div [routerLink]="['../tab1/date-time']">
+    <h3>Фомина Светлана Юрьевна</h3>
+    <p>Расписание</p>
+  </div>
+  <div class="list1Disable">
     <h3>Фомина Светлана Юрьевна</h3>
     <p>Расписание</p>
   </div>
@@ -40,15 +50,7 @@
     <h3>Фомина Светлана Юрьевна</h3>
     <p>Расписание</p>
   </div>
-  <div [routerLink]="['../tab1/date-time']">
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </div>
-  <div class="list1Disable">
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </div>
-
+-->
 </div>
 
 </div>
