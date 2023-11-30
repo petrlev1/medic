@@ -161,11 +161,17 @@
   <div class="list2" style="border: 1px solid #BEBEBE; border-radius: 3pt; margin-top: 10pt;">
     <ion-grid>
       <ion-row>
-        <ion-col><div style="margin: 0 0 7pt 0; color: #777777;">Начать с:</div>
+        <ion-col>
+          
+          <div class="calendarCont">
+          <div style="color: #777777;">Начать с:</div>
+          <div class="cal_hider cal_hider2"></div>
         <div>
           <ion-datetime locale="ru-RU" presentation="date" [firstDayOfWeek]="1">
           </ion-datetime>
         </div>
+      </div>
+
         </ion-col>
       </ion-row>
     </ion-grid>

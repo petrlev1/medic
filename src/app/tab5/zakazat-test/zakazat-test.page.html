@@ -31,12 +31,18 @@ style="margin: 10pt 0 0 0;"></ion-input>
 <div class="list2" style="border: 1px solid #BEBEBE; border-radius: 3pt; margin-top: 10pt;">
   <ion-grid>
     <ion-row>
-      <ion-col><div style="color: #777777;">Дата:</div>
+      <ion-col>
+        
+        <div class="calendarCont">
+        <div style="color: #777777;">Дата:</div>
+        <div class="cal_hider cal_hider2"></div>
       <div>
         <ion-datetime presentation="date" locale="ru-RU" [firstDayOfWeek]="1">
           <span slot="time-label">Время:</span>
         </ion-datetime>
       </div>
+      </div>
+
       </ion-col>
     </ion-row>
   </ion-grid>
