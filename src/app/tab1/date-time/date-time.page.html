@@ -27,18 +27,21 @@
 <ion-datetime presentation="date" [multiple]="true" [value]="['2023-06-03', '2023-06-13', '2023-06-29', '2023-07-20']" (ionChange)="onDateChange( $event )"></ion-datetime>
 -->
 
-<ion-datetime locale="ru-RU" presentation="date" [firstDayOfWeek]="1" dayValues="{{pickerArray}}" [value]="['2023-10-10']" (ionChange)="onDateChange( $event )"></ion-datetime>
+<ion-datetime locale="ru-RU" presentation="date" [firstDayOfWeek]="1" [(ngModel)]="defaultDate" (ionChange)="onDateChange( $event )"  #myDatePicker></ion-datetime>
 
 
 </div>
 
-<h3>Свободное время</h3>
+<h3 [innerHTML]="timetit"></h3>
 <ion-radio-group value="custom-checked" class="radioDate">
-  <ion-radio value="custom-checked"><span>10:00</span></ion-radio>
+  <ion-radio *ngFor="let time of times" [value]="time.checked"><span>{{time.time}}</span></ion-radio>
+ <!--
+ <ion-radio value="custom-checked"><span>10:00</span></ion-radio>
   <ion-radio><span>11:00</span></ion-radio>
   <ion-radio><span>12:00</span></ion-radio>
   <ion-radio><span>13:00</span></ion-radio>
   <ion-radio><span>15:00</span></ion-radio>
+  -->
 </ion-radio-group>
 
 
