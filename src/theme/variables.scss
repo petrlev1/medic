@@ -164,6 +164,14 @@ ion-tab-bar {
 
   .datetime-time ion-picker-internal { }
 
+  .calendarCont {position: relative;}
+.cal_hider { position: absolute; width: 90px; height: 43px; top: 3px; right: 3px; 
+  background-color: #fff;
+  z-index: 99;
+  opacity: 1;
+}
+.cal_hider2 { top: 19px;}
+
 
 
 

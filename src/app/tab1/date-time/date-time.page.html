@@ -23,11 +23,14 @@
 <div class="title1" style="margin-bottom: 15pt;">Дата и время</div>
 
 <div style="text-align: center">
+  <div class="calendarCont">
+    <div class="cal_hider"></div>
 <!--
 <ion-datetime presentation="date" [multiple]="true" [value]="['2023-06-03', '2023-06-13', '2023-06-29', '2023-07-20']" (ionChange)="onDateChange( $event )"></ion-datetime>
 -->
 
 <ion-datetime locale="ru-RU" presentation="date" [firstDayOfWeek]="1" [(ngModel)]="defaultDate" (ionChange)="onDateChange( $event )"  #myDatePicker></ion-datetime>
+</div>
 
 
 </div>
