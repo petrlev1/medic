@@ -145,6 +145,7 @@ onAuthStateChanged(auth, (user) => {
 		  data => { // json data
 
 		  this.titlesList = Object.values(data);
+		  //console.log("data: ",data);
 		  //console.log('cnt: ', Object.values(data)[1].length);
 		  // console.log('val: ', Object.keys(Object.values(data)[1]));
 
@@ -152,8 +153,10 @@ onAuthStateChanged(auth, (user) => {
 		  this.typein = Object.keys(Object.values(data)[1])[this.typei];
 
 
-			  for(var d in Object.values(data)[1][Object.keys(Object.values(data)[1])[this.typei]]) {
-				//  console.log('key3: ',Object.values(Object.values(data)[1])[this.typei]);
+var test_v = Object.values(data)[1][Object.keys(Object.values(data)[1])[this.typei]].reverse();
+
+			  for(var d in test_v) {
+				  //console.log('key3: ',Object.values(Object.values(data)[1])[this.typei]);
 
 				  this.profs.push({
 					  type: Object.keys(Object.values(data)[1])[1],
