@@ -24,8 +24,10 @@ defaultDate : any;
 
 timetit: string;
 
+zapismess: string;
+
 datajson: Array<{id: string; date: string; doctor: string; time: string;}> = [];
-times: Array<{time: string; checked: string;}> = [];
+times: Array<{doctor: string; date: string; time: string; checked: string; id: string;}> = [];
 
 currdoctor: string;
 
@@ -33,6 +35,7 @@ currdoctor: string;
   constructor(private location: Location, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
       this.currdoctor = "";
 	  this.timetit = "";
+	  this.zapismess = "";
 
 	   this.route.queryParams.subscribe(
       params => {
@@ -111,6 +114,8 @@ var days = [];
   }
 
 
+// https://stackoverflow.com/questions/57510066/how-can-i-catch-the-material-datepicker-month-pagination-event 
+
  onDateChange( event: any ){
   
 
@@ -140,7 +145,7 @@ var days = [];
 	 //var selectedDate2 = Object.values(this.datajson)[0]["date"].split(".");
 	 this.defaultDate = event.detail.value.substr(0,7) + "-" + days[0];
 
-console.log(event.detail.value);
+//console.log(event.detail.value);
 	 
 	 this.GetTime(event.detail.value);
 
@@ -161,6 +166,8 @@ var i=1;
 
 	 for(var o in Object.values(this.datajson)) {
 
+		 //console.log(Object.values(this.datajson)[o]);
+
 		 //console.log(ftime[2]+"."+ftime[1]+"."+ftime[0]);
         if (Object.values(this.datajson)[o]['date']==ftime[2]+"."+ftime[1]+"."+ftime[0])
         {
@@ -168,9 +175,11 @@ var i=1;
 
 			if (i==1)
 			{
-				this.times.push({time: Object.values(this.datajson)[o]['time'], checked: 'custom-checked'});
+				this.times.push({doctor: Object.values(this.datajson)[o]['doctor'],date: Object.values(this.datajson)[o]['date'],time: Object.values(this.datajson)[o]['time'], checked: 'custom-checked',id: Object.values(this.datajson)[o]['id']});
+
+
 			}else{
-				this.times.push({time: Object.values(this.datajson)[o]['time'], checked: i+""});
+				this.times.push({doctor: Object.values(this.datajson)[o]['doctor'],date: Object.values(this.datajson)[o]['date'],time: Object.values(this.datajson)[o]['time'], checked: i+"",id: Object.values(this.datajson)[o]['id']});
 			}
 			
         
@@ -188,9 +197,103 @@ var i=1;
 	 //console.log(this.times);
 
 	  }
- 
+
+
+
+
+onButtonClick(id: any,time: any,date: any,doctor: any){
+
+
+
+
+
+
+	  const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+
+    const uid = user.uid;
+
+   	const starCountRef = ref(getDatabase(), '/users/' + uid + "/auth");
+
+	onValue(starCountRef, (snapshot) => {
+
+		const clogin = snapshot.val().login;
+		const cpassw = snapshot.val().passw;
+
+		console.log(id + " / " + clogin + " / " +cpassw);
+
+
+
+  	const config = {
+		headers: {
+
+		//  'Content-Type':  'application/json',
+        //  'Authorization': 'Basic ' + btoa(unescape(encodeURIComponent('Администратор:By3dy9di')
+        }
+      };
+
+
+	 this.http.post('https://rieltorov.net/tmp/medicapi3zapis.php', {id: id, clogin: clogin, cpassw: sha1(cpassw)})
+		 
+	 
+	 .subscribe(
+		  data => { // json data
+
+
+		   this.zapismess = "<font color=green><i>Вы успешно записаны к доктору " + doctor + " на " + date + " в " + time + "</i></font>";
+
+		 console.log(Object.values(data));
+
+		  //this.titlesList = Object.values(data);
+
+
+		   },
+		   error => {
+			   console.log('Error: ', error);
+			  });
+
+
+
+
+    }, {
+           onlyOnce: true // если данные должны быть получены в реалтайм
+          });
+
+
+
+
+
+
+
+
+
+
+  } else {
+    // User is signed out
+   console.log('not reged');
+
+
+
+  }
+});
+
+
+
+
+
+
+
+
+
+
+	
+}
 
   ngOnInit() {
+
+	  //this.initMonthObserver();
 
   }
 
