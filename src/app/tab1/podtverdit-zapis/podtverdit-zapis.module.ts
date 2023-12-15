@@ -8,13 +8,26 @@ import { PodtverditZapisPageRoutingModule } from './podtverdit-zapis-routing.mod
 
 import { PodtverditZapisPage } from './podtverdit-zapis.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PodtverditZapisPageRoutingModule
+    PodtverditZapisPageRoutingModule,
+    	HttpClientModule
   ],
+	   providers: [],
   declarations: [PodtverditZapisPage]
 })
-export class PodtverditZapisPageModule {}
+export class PodtverditZapisPageModule {
+  
+  
+  
+  
+  
+  
+  }

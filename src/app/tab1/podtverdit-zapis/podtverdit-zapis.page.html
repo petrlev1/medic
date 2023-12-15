@@ -29,14 +29,14 @@
   <ion-item detail="false">
     <ion-label>
       <p>Время</p>
-      <h3>05 мая 2022 г | 10:00</h3>
+      <h3>{{date}} | {{time}}</h3>
     </ion-label>
   </ion-item>
 
   <ion-item detail="false">
     <ion-label>
       <p>Врач</p>
-      <h3>Фомина Светлана Юрьевна</h3>
+      <h3>{{doctor}}</h3>
     </ion-label>
   </ion-item>
 
@@ -49,8 +49,9 @@
 
   </div>
 
-<ion-button id="present-alert" expand="block" color="secondary" size="large" style="margin-top: 30pt;"><span>Подтвердить запись</span></ion-button>
+<ion-button (click)="podtverdit(id)" expand="block" color="secondary" size="large" style="margin-top: 30pt;"><span>Подтвердить запись</span></ion-button>
 <ion-alert
+ [isOpen]="isAlertOpen"
   trigger="present-alert"
   header="Запись подтверждена"
   [buttons]="alertButtons"

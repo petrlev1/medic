@@ -24,6 +24,12 @@ defaultDate : any;
 
 timetit: string;
 
+id: string;
+time: string;
+date: string;
+doctor: string;
+
+
 zapismess: string;
 
 datajson: Array<{id: string; date: string; doctor: string; time: string;}> = [];
@@ -36,6 +42,10 @@ currdoctor: string;
       this.currdoctor = "";
 	  this.timetit = "";
 	  this.zapismess = "";
+	  this.id = "";
+	  this.time = "";
+	  this.date = "";
+	  this.doctor = "";
 
 	   this.route.queryParams.subscribe(
       params => {
@@ -57,6 +67,8 @@ currdoctor: string;
 			  if (this.currdoctor==Docs[key]['Doctor']){
 				 // console.log(Docs[key]['ID']+ ", " + Docs[key]['Date']+ ", " + Docs[key]['Doctor']);
 				  //console.log(Docs[key]['ID']+ ", " + Docs[key]['Doctor']);
+
+				 // console.log(Docs[key]);
 
 				   this.datajson.push({
 					  id: Docs[key]['ID'],
@@ -166,7 +178,7 @@ var i=1;
 
 	 for(var o in Object.values(this.datajson)) {
 
-		 //console.log(Object.values(this.datajson)[o]);
+		// console.log(Object.values(this.datajson)[o]);
 
 		 //console.log(ftime[2]+"."+ftime[1]+"."+ftime[0]);
         if (Object.values(this.datajson)[o]['date']==ftime[2]+"."+ftime[1]+"."+ftime[0])
@@ -203,10 +215,14 @@ var i=1;
 
 onButtonClick(id: any,time: any,date: any,doctor: any){
 
+this.id = id;
+this.time = time;
+this.date = date;
+this.doctor = doctor;
 
+console.log(this.id);
 
-
-
+/*
 
 	  const auth = getAuth();
 
@@ -281,7 +297,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-
+*/
 
 
 

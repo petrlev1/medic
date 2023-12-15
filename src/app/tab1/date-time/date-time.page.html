@@ -50,7 +50,8 @@
 <div [innerHTML]="zapismess"></div>
 
 <div style="text-align: center; margin-top: 30pt;">
-<ion-button expand="block" color="secondary" size="large" [routerLink]="['../podtverdit-zapis']"><span>Записаться на прием</span></ion-button>
+<ion-button *ngIf="id != ''"  expand="block" color="secondary" size="large" [routerLink]="['../podtverdit-zapis']"  [queryParams]=
+    "{id:id,time:time,date:date,doctor:doctor}"><span>Записаться на прием</span></ion-button>
 </div>
 
 </div>
