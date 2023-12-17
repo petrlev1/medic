@@ -27,6 +27,7 @@ doctor: string;
 time: string;
 date: string;
 isAlertOpen: boolean;
+isAlertOpen2: boolean;
 
   public alertButtons = ['Хорошо'];
 
@@ -40,7 +41,7 @@ isAlertOpen: boolean;
 	  this.date = "";
 
 	  this.isAlertOpen = false;
-  
+	  this.isAlertOpen2 = false;
   }
 
   ngOnInit() {
@@ -122,7 +123,16 @@ onAuthStateChanged(auth, (user) => {
 
 		  //this.titlesList = Object.values(data);
 
-		  this.isAlertOpen = Object.values(data)[1];
+		  if (Object.values(data)[1]==true)
+		  {
+			  this.isAlertOpen = true;
+		  }
+		  else
+		 {
+			   this.isAlertOpen2 = true;
+		 }
+
+		  
 
 
 		   },

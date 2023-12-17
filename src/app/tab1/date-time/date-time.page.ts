@@ -218,7 +218,7 @@ onButtonClick(id: any,time: any,date: any,doctor: any){
 this.id = id;
 this.time = time;
 this.date = date;
-this.doctor = doctor;
+this.doctor = this.currdoctor;
 
 console.log(this.id);
 
