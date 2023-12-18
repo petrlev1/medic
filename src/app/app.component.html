@@ -127,11 +127,27 @@
 
 <div class="ion-page" id="main-content">
 
+  <ion-button expand="block" color="secondary" size="large" [routerLink]="['./tabs/tab1/date-time']">Добавить в календарь</ion-button>
+
+
+  <!-- Tabs -->
+  <div class="tab_panel2">
+  <ion-button size="small" [routerLink]="['./tabs/tab2']">
+    <div class="custom-button-content">
+      <ion-icon name="create-outline"></ion-icon>
+      <ion-label>Записи</ion-label>
+    </div>
+  </ion-button>
+  </div>
+
+
   <ion-content class="ion-padding">
 
-<!-- Tabs -->
+
+
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet>
+  </ion-router-outlet>
 </ion-app>
 
 
