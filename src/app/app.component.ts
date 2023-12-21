@@ -16,6 +16,12 @@ export class AppComponent {
   constructor(private router: Router) {
   }
 
+  
+  loc()
+  {
+   window.location.href = '/tabs/tab3';
+  }
+
 
   SignOut(){
 
