@@ -50,8 +50,8 @@ currdoctor: string;
 	   this.route.queryParams.subscribe(
       params => {
         this.currdoctor =  params['doctor'];
-      }
-    )
+         console.log("Currdoctor: ",this.currdoctor);
+
 
 
 	 this.http.post('https://rieltorov.net/tmp/medicapi3v.php', {})
@@ -61,9 +61,9 @@ currdoctor: string;
 		  data => { // json data
 		  const dat = 'Data' as string;
 		  const Docs = data[dat as keyof typeof data];
-		  
+
 		  (Object.keys(Docs) as (keyof typeof Docs)[]).forEach((key, index) => {
-			  
+
 			  if (this.currdoctor==Docs[key]['Doctor']){
 				 // console.log(Docs[key]['ID']+ ", " + Docs[key]['Date']+ ", " + Docs[key]['Doctor']);
 				  //console.log(Docs[key]['ID']+ ", " + Docs[key]['Doctor']);
@@ -80,7 +80,7 @@ currdoctor: string;
 
 
 				  }
-			    
+
 				});
 
 				var selectedDate = Object.values(this.datajson)[0]["date"].split(".");
@@ -121,17 +121,19 @@ var days = [];
 			   console.log('Error: ', error);
 			  });
 
-	
+
+  }
+    );
 
   }
 
 
-// https://stackoverflow.com/questions/57510066/how-can-i-catch-the-material-datepicker-month-pagination-event 
+// https://stackoverflow.com/questions/57510066/how-can-i-catch-the-material-datepicker-month-pagination-event
 
  onDateChange( event: any ){
-  
 
- 
+
+
 
 	const days = [];
 	this.timetit = "";
@@ -158,7 +160,7 @@ var days = [];
 	 this.defaultDate = event.detail.value.substr(0,7) + "-" + days[0];
 
 //console.log(event.detail.value);
-	 
+
 	 this.GetTime(event.detail.value);
 
 	// console.log(days);
@@ -183,7 +185,7 @@ var i=1;
 		 //console.log(ftime[2]+"."+ftime[1]+"."+ftime[0]);
         if (Object.values(this.datajson)[o]['date']==ftime[2]+"."+ftime[1]+"."+ftime[0])
         {
-				
+
 
 			if (i==1)
 			{
@@ -193,18 +195,18 @@ var i=1;
 			}else{
 				this.times.push({doctor: Object.values(this.datajson)[o]['doctor'],date: Object.values(this.datajson)[o]['date'],time: Object.values(this.datajson)[o]['time'], checked: i+"",id: Object.values(this.datajson)[o]['id']});
 			}
-			
-        
+
+
 		 //console.log(i + " / " + Object.values(this.datajson)[o]['id'] + " / " + Object.values(this.datajson)[o]['date'] + " / " + Object.values(this.datajson)[o]['time']  + " / " + Object.values(this.datajson)[o]['doctor']);
 		i++;
 		}
- 
+
 	 }
 	 if (this.times.length!=0)
 	 {
 		  this.timetit = "Свободное время";
 	 }
-	
+
 
 	 //console.log(this.times);
 
@@ -252,8 +254,8 @@ onAuthStateChanged(auth, (user) => {
 
 
 	 this.http.post('https://rieltorov.net/tmp/medicapi3zapis.php', {id: id, clogin: clogin, cpassw: sha1(cpassw)})
-		 
-	 
+
+
 	 .subscribe(
 		  data => { // json data
 
@@ -304,7 +306,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-	
+
 }
 
   ngOnInit() {

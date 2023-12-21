@@ -1,7 +1,7 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom" color="primary" style="border-radius: 10pt 10pt 0 0;">
-    
+
     <ion-tab-button tab="tab1">
       <ion-icon aria-hidden="true" name="home-outline"></ion-icon>
       <ion-label>Главная</ion-label>
@@ -12,7 +12,7 @@
       <ion-label>Записи</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab3">
+    <ion-tab-button (click)=loc()>
       <ion-icon aria-hidden="true" name="medkit-outline"></ion-icon>
       <ion-label>Врачи</ion-label>
     </ion-tab-button>
