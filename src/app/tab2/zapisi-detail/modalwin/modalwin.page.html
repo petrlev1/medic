@@ -21,10 +21,12 @@
 <ion-grid>
   <ion-row>
     <ion-col>
-      <ion-button expand="block" color="danger" size="large" [routerLink]="['../']">Да</ion-button>
+      <ion-button expand="block" color="danger" size="large" [routerLink]="['../']" [queryParams]=
+    "{id:id, doctor: doctor, time: time, date: date, cancel: 1}">Да</ion-button>
     </ion-col>
     <ion-col>
-      <ion-button expand="block" color="secondary" size="large" [routerLink]="['../']">Нет</ion-button>
+      <ion-button expand="block" color="secondary" size="large" [routerLink]="['../']" [queryParams]=
+    "{id:id, doctor: doctor, time: time, date: date, cancel: 0}">Нет</ion-button>
     </ion-col>
   </ion-row>
 </ion-grid>

@@ -22,15 +22,24 @@
 
 <div class="list3">
 
-  <div [routerLink]="['../tab2/zapisi-detail']">
-    <h3>Фомина Светлана Юрьевна</h3>
-    <p>Расписание</p>
-  </div>
-  <div [routerLink]="['../tab2/zapisi-detail']">
-    <h3>Фомина Светлана Юрьевна</h3>
+
+ <div  *ngFor="let doc of doctors" [routerLink]="['../tab2/zapisi-detail']" [queryParams]=
+    "{id:doc.id, doctor: doc.doctor, time: doc.time, date: doc.date, cancel: 0}">
+    <h3>{{doc.doctor}}</h3>
     <p>Расписание</p>
   </div>
 
+
+<!--
+  <div [routerLink]="['../tab2/zapisi-detail']">
+    <h3>Фомина Светлана Юрьевна</h3>
+    <p>Расписание</p>
+  </div>
+  <div [routerLink]="['../tab2/zapisi-detail']">
+    <h3>Фомина Светлана Юрьевна</h3>
+    <p>Расписание</p>
+  </div>
+-->
 </div>
 
 <div class="title2" style="margin: 25pt 0 10pt 0;">Архив записей:</div>

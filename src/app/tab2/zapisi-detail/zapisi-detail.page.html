@@ -26,15 +26,15 @@
   <ion-grid>
     <ion-row>
       <ion-col size="5">Врач:</ion-col>
-      <ion-col><ion-label color="medium">Фомина Светлана Юрьевна</ion-label></ion-col>
+      <ion-col><ion-label color="medium">{{doctor}}</ion-label></ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Дата приема:</ion-col>
-      <ion-col><ion-label color="medium">25.07.2023</ion-label></ion-col>
+      <ion-col><ion-label color="medium">{{date}}</ion-label></ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Время приема:</ion-col>
-      <ion-col><ion-label color="medium">16:00</ion-label></ion-col>
+      <ion-col><ion-label color="medium">{{time}}</ion-label></ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Адрес:</ion-col>
@@ -46,8 +46,11 @@
 
 <ion-button expand="block" color="secondary" size="large" style="margin-top: 30pt;">Добавить в календарь</ion-button>
 
-<ion-button expand="block" color="danger" size="large" [routerLink]="['modalwin']" style="margin-top: 15pt;">Отменить запись</ion-button>
-
+<ion-button *ngIf="cancel==0" expand="block" color="danger" size="large" [routerLink]="['modalwin']" style="margin-top: 15pt;" [queryParams]=
+    "{id:id, doctor: doctor, time: time, date: date, cancel: 0}">Отменить запись</ion-button>
+<div style="margin-top: 15pt;" align=center [hidden]="cancel==0"><font color=red>Запись отменена</font></div>
 </div>
+
+
 
 </ion-content>
