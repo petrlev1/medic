@@ -72,7 +72,7 @@ onAuthStateChanged(auth, (user) => {
 
 		 //  this.zapismess = "<font color=green><i>Вы успешно записаны к доктору " + doctor + " на " + date + " в " + time + "</i></font>";
 
-		 console.log(Object.values(data)[1]);
+		// console.log(Object.values(data)[1]);
 
 		//console.log(Object.values(data)[1][2]['Doctor']);
 

@@ -25,7 +25,7 @@ time: string;
 date: string;
 cancel: number;
   
-  constructor(private route: ActivatedRoute) {
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
 	  
 	    this.id = "";
 	  this.doctor = "";
@@ -38,6 +38,8 @@ cancel: number;
 
   ngOnInit() {
 
+	  const auth = getAuth();
+
 	  this.route.queryParams.subscribe(
       params => {
         this.id =  params['id'];
@@ -48,14 +50,76 @@ cancel: number;
 
 		if (params['cancel']==1)
 		{
-			console.log("go api");
-		}
+			//console.log("go api");
+			
+			onAuthStateChanged(auth, (user) => {
+				if (user) {
+					
+					const uid = user.uid;
+					const starCountRef = ref(getDatabase(), '/users/' + uid + "/auth");
+					
+					onValue(starCountRef, (snapshot) => {
+						
+						const clogin = snapshot.val().login;
+						const cpassw = snapshot.val().passw;
+						
+						//console.log(id + " / " + clogin + " / " +cpassw);
+						
+						const config = {
+							headers: {
+								//  'Content-Type':  'application/json',
+								//  'Authorization': 'Basic ' + btoa(unescape(encodeURIComponent('Администратор:By3dy9di')
+								}
+							};
+						
+						console.log(params['id'] + " / " + clogin + " / " + sha1(cpassw));
+
+						this.http.post('https://rieltorov.net/tmp/medicapi3zapisd.php', {id: params['id'], clogin: clogin, cpassw: sha1(cpassw)})
+							
+						.subscribe(
+							data => { // json data
+							//  this.zapismess = "<font color=green><i>Вы успешно записаны к доктору " + doctor + " на " + date + " в " + time + "</i></font>";
+							
+							   //console.log(Object.values(data)[1]);
+							   console.log(data);
+							
+							   //this.titlesList = Object.values(data);
+							/*
+							   if (Object.values(data)[1]==true)
+							   {
+								   this.isAlertOpen = true;
+							   }
+							   else
+							   {
+								   this.isAlertOpen2 = true;
+							   }
+							   */
+						   },
+						   error => {
+							   console.log('Error: ', error);
+							});
+			          }, {
+                         onlyOnce: true // если данные должны быть получены в реалтайм
+                         });
+
+                   } else {
+					   // User is signed out
+					   console.log('not reged');
+ 				        }
+               });
+	    }
+
+	}
 
 
 		//console.log(this.cancel);
 
 
-  });
+  );
 
 }
-  }
+  
+  
+  
+  
+ }

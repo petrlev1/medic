@@ -8,13 +8,17 @@ import { ZapisiDetailPageRoutingModule } from './zapisi-detail-routing.module';
 
 import { ZapisiDetailPage } from './zapisi-detail.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ZapisiDetailPageRoutingModule
+    ZapisiDetailPageRoutingModule,
+    	HttpClientModule
   ],
+  providers: [],
   declarations: [ZapisiDetailPage]
 })
 export class ZapisiDetailPageModule {}
