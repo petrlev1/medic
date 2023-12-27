@@ -24,8 +24,12 @@ export class Tab3Page {
 
  doctors: Array<{doctor: string;}> = [];
 
+ loader: boolean;
+
 
   constructor(private location: Location, private route: ActivatedRoute, private router: Router, private http: HttpClient) {
+
+  this.loader = true;
 
   }
 
@@ -80,6 +84,8 @@ console.log(uid);
 
 	  .subscribe(
 		  data => { // json data
+
+		   this.loader = false;
 
 
 	//	  console.log('cnt: ', data[1]);

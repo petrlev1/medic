@@ -5,7 +5,7 @@
     <ion-buttons slot="end">
       <ion-menu-button color="primary"></ion-menu-button>
     </ion-buttons>
-    
+
   </ion-toolbar>
 
 </ion-header>
@@ -13,6 +13,11 @@
 
 
 <ion-content [fullscreen]="true">
+
+
+<ion-loading trigger="open-loading" message="Загрузка..." spinner="circles"  [isOpen]="loader"></ion-loading>
+
+
 
 <div class="cont1">
 

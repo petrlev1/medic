@@ -21,13 +21,21 @@ export class Tab2Page {
 
  doctors: Array<{doctor: string; id: string, time: string, date: string}> = [];
 
-  constructor(private http: HttpClient) {}
+ loader: boolean;
+
+  constructor(private http: HttpClient) {
+
+      this.loader = true;
+
+
+  }
 
 
 
     ngOnInit() {
 
 		this.zapisi(this.doctors);
+
 	}
 
 
@@ -64,10 +72,12 @@ onAuthStateChanged(auth, (user) => {
 
 
 	 this.http.post('https://rieltorov.net/tmp/medicapi3zapisi.php', {clogin: clogin, cpassw: sha1(cpassw)})
-		 
-	 
+
+
 	 .subscribe(
 		  data => { // json data
+
+		  this.loader = false;
 
 
 		 //  this.zapismess = "<font color=green><i>Вы успешно записаны к доктору " + doctor + " на " + date + " в " + time + "</i></font>";
@@ -80,11 +90,11 @@ onAuthStateChanged(auth, (user) => {
 		Object.values(data)[1].forEach(function (value: any) {
  // console.log(value['ID']);
   doctors.push({doctor: value['Doctor'], id: value['ID'], time: value['BeginTime'], date: value['Date']});
-}); 
+});
 
 
 
-  
+
 
 
 		   },
