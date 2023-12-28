@@ -20,6 +20,7 @@ export class IssledovaniyaPage implements OnInit {
 
 test: number;
 
+loader: boolean;
 
 
 
@@ -39,6 +40,7 @@ const authd = location.getState();
 
 
   this.test = 0;
+  this.loader = true;
 
 
   }
@@ -65,7 +67,7 @@ const authd = location.getState();
 
   GetLast(type: string, data: object)
 	  {
-	  
+
 		   const dat = 'Data' as string;
 		   const types = data[dat as keyof typeof data];
 		   const typer = type as string;
@@ -144,6 +146,8 @@ console.log(uid);
 
 	  .subscribe(
 		  data => { // json data
+
+		  this.loader = false;
 
 		  this.titlesList = Object.values(data);
 		  //console.log('cnt: ', Object.values(data)[1].length);
