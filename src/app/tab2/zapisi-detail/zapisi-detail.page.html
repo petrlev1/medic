@@ -1,5 +1,7 @@
 <ion-header [translucent]="true" class="ion-no-border">
 
+<ion-loading trigger="open-loading" message="Загрузка..." spinner="circles"  [isOpen]="loader"></ion-loading>
+
   <ion-toolbar>
 
     <ion-buttons slot="start">
@@ -9,7 +11,7 @@
     <ion-buttons slot="end">
       <ion-menu-button color="primary"></ion-menu-button>
     </ion-buttons>
-    
+
   </ion-toolbar>
 
 </ion-header>
