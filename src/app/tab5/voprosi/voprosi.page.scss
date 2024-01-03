@@ -1,0 +1,12 @@
+ion-accordion { margin: 15px 0; border-radius: 5px; }
+ion-item { font-weight: bold;
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgba(0, 0, 0, 0))));
+    --background: var(--ion-item-background, var(--ion-background-color, #F9F9F9));
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+}
+.ion-padding {
+    background-color: #F9F9F9;
+    --background: var(--ion-background-color, #F9F9F9);
+    padding-top: var(--ion-padding, 0);
+}

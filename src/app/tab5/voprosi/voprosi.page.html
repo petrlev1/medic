@@ -24,28 +24,20 @@
 
   <div class="title1" style="margin-bottom: 25pt;">Частые вопросы</div>
 
- 
-  <div class="faq1">
-      <div (click)="onclick1()" class="faq1tit">
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header">
         Какие гарантии того, что ваш товар подлинный и качественный?
-        <div class="faq1Arrow">{{ReadMore? "&#8964;":"&#8963;"}}</div>
-      </div>
-      <div *ngIf="visible" class="faq1Cont">
-        Заказать вы, конечно, можете, но на любой рецептурный препарат в аптеке имеют право потребовать рецепт, и если рецепта у вас не окажется, аптека вправе не выдать вам заказ.
-      </div>
-</div>
-
-<div class="faq1">
-  <div (click)="onclick1()" class="faq1tit">
-    Какие гарантии того, что ваш товар подлинный и качественный?
-    <div class="faq1Arrow">{{ReadMore? "&#8964;":"&#8963;"}}</div>
-  </div>
-  <div *ngIf="visible" class="faq1Cont">
-    Заказать вы, конечно, можете, но на любой рецептурный препарат в аптеке имеют право потребовать рецепт, и если рецепта у вас не окажется, аптека вправе не выдать вам заказ.
-  </div>
-</div>
-
-
+      </ion-item>
+      <div class="ion-padding" slot="content">Заказать вы, конечно, можете, но на любой рецептурный препарат в аптеке имеют право потребовать рецепт, и если рецепта у вас не окажется, аптека вправе не выдать вам заказ.</div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header">
+        Какие гарантии того, что ваш товар подлинный и качественный?
+      </ion-item>
+      <div class="ion-padding" slot="content">Заказать вы, конечно, можете, но на любой рецептурный препарат в аптеке имеют право потребовать рецепт, и если рецепта у вас не окажется, аптека вправе не выдать вам заказ.</div>
+    </ion-accordion>
+  </ion-accordion-group>
    
   
 
