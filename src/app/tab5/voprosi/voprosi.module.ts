@@ -8,13 +8,17 @@ import { VoprosiPageRoutingModule } from './voprosi-routing.module';
 
 import { VoprosiPage } from './voprosi.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VoprosiPageRoutingModule
+    VoprosiPageRoutingModule,
+    HttpClientModule
   ],
+  providers: [],
   declarations: [VoprosiPage]
 })
 export class VoprosiPageModule {}

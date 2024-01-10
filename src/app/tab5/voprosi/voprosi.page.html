@@ -9,7 +9,7 @@
     <ion-buttons slot="end">
       <ion-menu-button color="primary"></ion-menu-button>
     </ion-buttons>
-    
+
   </ion-toolbar>
 
 </ion-header>
@@ -25,21 +25,16 @@
   <div class="title1" style="margin-bottom: 25pt;">Частые вопросы</div>
 
   <ion-accordion-group>
-    <ion-accordion value="first">
+    <ion-accordion *ngFor="let faq of faqs">
       <ion-item slot="header">
-        Какие гарантии того, что ваш товар подлинный и качественный?
+        {{faq.vopros}}
       </ion-item>
-      <div class="ion-padding" slot="content">Заказать вы, конечно, можете, но на любой рецептурный препарат в аптеке имеют право потребовать рецепт, и если рецепта у вас не окажется, аптека вправе не выдать вам заказ.</div>
+      <div class="ion-padding" slot="content">{{faq.otvet}}</div>
     </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header">
-        Какие гарантии того, что ваш товар подлинный и качественный?
-      </ion-item>
-      <div class="ion-padding" slot="content">Заказать вы, конечно, можете, но на любой рецептурный препарат в аптеке имеют право потребовать рецепт, и если рецепта у вас не окажется, аптека вправе не выдать вам заказ.</div>
-    </ion-accordion>
+
   </ion-accordion-group>
-   
-  
+
+
 
   <ion-button expand="block" color="secondary" size="large" [routerLink]="['../zadat-vopros']" style="margin: 25pt 0 0 0;"><span>Задать вопрос</span></ion-button>
 
