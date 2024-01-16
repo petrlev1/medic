@@ -33,7 +33,7 @@ export class VoprosiPage implements OnInit {
 
 
 
-	 this.http.post('http://pokolenie.golddoor.ru/afaq.php', {})
+	 this.http.post('https://pokolenie.golddoor.ru/afaq.php', {})
 
 
 
